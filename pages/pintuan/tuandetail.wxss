@@ -1,0 +1,154 @@
+page {
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 500rpx;
+    border-bottom: 5px solid #e8e8e8;
+    margin-bottom: 10px;
+}
+
+.header image {
+    margin-left: 5%;
+    margin-right: 3%;
+    width: 50%;
+    height: 400rpx;
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
+}
+
+.hleft {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    width: 34%;
+    height: 300rpx;
+    padding-top: 180rpx;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.num {
+    letter-spacing: 8rpx;
+    font-weight: bold;
+    font-size: 30rpx;
+    margin-bottom: 12rpx;
+}
+
+.refer {
+    color: red;
+    font-size: 36rpx;
+    letter-spacing: 1rpx;
+    font-weight: bold;
+}
+
+.seller {
+    letter-spacing: 0rpx;
+    font-size: 22rpx;
+    color: #5d5d5d;
+    text-decoration: line-through;
+}
+
+.btn {
+    border: 1px solid red;
+    color: red;
+    width: 100rpx;
+    height: 50rpx;
+    font-size: 18rpx;
+    line-height: 50rpx;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.user_list {
+    height: auto;
+    margin-top: 30rpx;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+swiper {
+    height: 110rpx;
+}
+
+.user_img {
+    width: 90rpx;
+    height: 90rpx;
+    border: 1px solid #f90;
+    border-radius: 25px 25px 25px 25px;
+    margin-top: 10rpx;
+    float: left;
+    margin-left: 20px;
+}
+
+.nouser_img {
+    margin-left: 20px;
+    width: 90rpx;
+    height: 90rpx;
+    border: 2px dashed #e8e8e8;
+    border-radius: 25px 25px 25px 25px;
+    margin-top: 10rpx;
+    float: left;
+    text-align: center;
+    line-height: 90rpx;
+    color: #dbd9d7;
+    font-weight: bold;
+    font-size: 36rpx;
+}
+
+.buttons {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.detailli {
+    width: 100%;
+    height: 70rpx;
+    border-top: 2rpx solid #e8e8e8;
+    font-size: 24rpx;
+    line-height: 70rpx;
+}
+
+.left {
+    float: left;
+    margin-left: 20px;
+}
+
+.right {
+    float: right;
+    margin-right: 10px;
+}
+
+.detailline {
+    width: 100%;
+    height: 8rpx;
+    background-color: #e8e8e8;
+}
+
+.footer {
+    width: 100%;
+    height: 146rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_first {
+    width: 50%;
+    font-size: 24rpx;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tuanzhangtext {
+    border: 1px solid #f90;
+    font-size: 24rpx;
+    background-color: #f90;
+    position: absolute;
+    left: 15px;
+    border-radius: 5px;
+}

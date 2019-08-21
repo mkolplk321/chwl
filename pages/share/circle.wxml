@@ -1,0 +1,9 @@
+<view class="page">
+    <image bindtap="yulan" mode="widthFix" src="{{imgUrl}}" style="width:100%"></image>
+    <view class="foot">
+        <button bindtap="saveImg" style="padding-left:80px" type="primary">
+            <text>保存到相册</text>
+            <text style="font-size:12px;">（保存图片后可分享到朋友圈）</text>
+        </button>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="cate-nav">
+        <scroll-view class="cate-nav-body" scrollLeft="{{scrollLeft}}" scrollX="true" style="width: 750rpx;">
+            <view bindtap="switchCate" class="item {{id==item.id?'active':''}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{categoryList}}" wx:key="id">
+                <view class="name">{{item.name}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <scroll-view scrollTop="{{scrollTop}}" scrollY="true" style="height:{{scrollHeight}};">
+        <view class="cate-item">
+            <view class="h">
+                <text class="name">{{currentCategory.name}}</text>
+                <text class="desc">{{currentCategory.frontName}}</text>
+            </view>
+            <goodList goods="{{teamList}}"></goodList>
+        </view>
+    </scroll-view>
+</view>

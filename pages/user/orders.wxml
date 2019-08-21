@@ -1,0 +1,68 @@
+<scroll-view bindscrolltolower="loadMore" class="list" lowerThreshold="800" scrollTop="80" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+    <view class="search_no" wx:if="{{!teams.length}}">
+        <view class="font_14">
+            <image class="scimg" src="../../images/search_no.png"></image>
+        </view>
+        <text>没有订单/(ㄒoㄒ)/~~</text>
+    </view>
+    <view class="shop df" wx:for="{{teams}}">
+        <image bindtap="orderdetail" class="sh_slt" data-id="{{item.id}}" src="{{item.image}}" wx:if="{{item.from!='xiaochengxupt'}}"></image>
+        <image bindtap="orderdetail" class="sh_slt" data-id="{{item.id}}" src="{{item.image}}" wx:if="{{item.from=='xiaochengxupt'&&item.tuan_status==2}}"></image>
+        <image bindtap="showtixing" class="sh_slt" src="{{item.image}}" wx:if="{{item.from=='xiaochengxupt'&&item.tuan_status!=2}}"></image>
+        <view class="df_1">
+            <view class="sp_text">
+                <block wx:if="{{item.from!='xiaochengxupt'}}">
+                    <view bindtap="orderdetail" class="sp_tit ovh1" data-id="{{item.id}}">{{item.title}}</view>
+                    <view bindtap="orderdetail" class="sp_neb" data-id="{{item.id}}">单价：¥ {{item.price}} 数量：×{{item.quantity}}</view>
+                    <view bindtap="orderdetail" class="sp_jg" data-id="{{item.id}}">¥：{{item.money}}</view>
+                </block>
+                <block wx:if="{{item.from=='xiaochengxupt'&&item.tuan_status==2}}">
+                    <view bindtap="orderdetail" class="sp_tit ovh1" data-id="{{item.id}}">{{item.title}}</view>
+                    <view bindtap="orderdetail" class="sp_neb" data-id="{{item.id}}">单价：¥ {{item.price}} 数量：×{{item.quantity}}</view>
+                    <view bindtap="orderdetail" class="sp_jg" data-id="{{item.id}}">¥：{{item.money}}</view>
+                </block>
+                <block wx:if="{{item.from=='xiaochengxupt'&&item.tuan_status!=2}}">
+                    <view bindtap="showtixing" class="sp_tit ovh1">{{item.title}}</view>
+                    <view bindtap="showtixing" class="sp_neb">单价：¥ {{item.price}} 数量：×{{item.quantity}}</view>
+                    <view bindtap="showtixing" class="sp_jg">¥：{{item.money}}</view>
+                </block>
+                <view bindtap="orderdetail" class="font_12 red fl_r mr_5" data-id="{{item.id}}" wx:if="{{item.from=='xiaochengxu'}}">查看订单</view>
+                <block wx:if="{{item.from=='xiaochengxuyjpt'}}">
+                    <block wx:if="{{item.rstate=='normal'}}">
+                        <view bindtap="refund" class="font_12 red fl_r mr_5" data-id="{{item.id}}">申请退款</view>
+                        <view bindtap="orderdetail" class="font_12 red fl_r mr_5" data-id="{{item.id}}">查看订单</view>
+                    </block>
+                    <block wx:if="{{item.rstate=='berefund'}}">
+                        <view class="font_12 red fl_r mr_5" style="color:blue">(已退款)</view>
+                        <view bindtap="gotobuy" class="font_12 red fl_r mr_5" data-id="{{item.team_id}}">再次购买</view>
+                    </block>
+                </block>
+                <block wx:if="{{item.from=='xiaochengxupt'}}">
+                    <view bindtap="gotopintuandetail" class="font_12 red fl_r mr_5" data-id="{{item.tuan_id}}" wx:if="{{item.tuan_status==1}}">邀请好友</view>
+                    <view bindtap="gotobuy" class="font_12 red fl_r mr_5" data-id="{{item.team_id}}" wx:if="{{item.tuan_status==3}}">再次购买</view>
+                    <view bindtap="orderdetail" class="font_12 red fl_r mr_5" data-id="{{item.id}}" wx:if="{{item.tuan_status==2}}">查看订单</view>
+                </block>
+                <block wx:if="{{item.from=='xiaochengxuhd'}}">
+                    <block wx:if="{{item.rstate=='normal'}}">
+                        <view bindtap="refund" class="font_12 red fl_r mr_5" data-id="{{item.id}}">申请退款</view>
+                        <view bindtap="orderdetail" class="font_12 red fl_r mr_5" data-id="{{item.id}}">查看订单</view>
+                    </block>
+                    <block wx:if="{{item.rstate=='berefund'}}">
+                        <view class="font_12 red fl_r mr_5" style="color:blue">(已退款)</view>
+                        <view bindtap="gotoactivebuy" class="font_12 red fl_r mr_5" data-id="{{item.team_id}}">再次购买</view>
+                    </block>
+                </block>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view>
+    <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>
+<modal bindcancel="refundcancel" bindconfirm="refundconfirm" cancelText="取消" confirmText="确定" hidden="{{refundhidden}}" title="请输入退款张数" type="number">
+    <view class="section__title">
+        <input bindinput="bindKeyInput" placeholder="请输入"></input>
+    </view>
+</modal>

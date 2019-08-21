@@ -1,0 +1,40 @@
+<view class="page">
+    <view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon color="#06c1ae" size="93" type="success"></icon>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">订单支付成功</view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view bindtap="gotoOrderDetail" class="weui-btn-area" data-id="{{orderid}}">
+                <button class="weui-btn" style="background-color:#06c1b6" type="primary">查看订单</button>
+            </view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area"></view>
+        </view>
+        <view class="item recommend" wx:if="{{recommendList}}">
+            <view class="header">其他产品推荐</view>
+            <navigator class="team" url="../team/team?id={{item.id}}" wx:for="{{recommendList}}">
+                <image src="{{item.image}}"></image>
+                <view class="title">{{item.title}}</view>
+                <view class="price">{{item.referprice}}元
+                    <view class="sellerprice">{{item.sellerprice}}元</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view class="fenxiang-box">
+    <image bindtap="show" class="fenxiang-btn" src="/image/fenxiang-btn.png"></image>
+</view>
+<view class="modal-box" hidden="{{flag}}">
+    <view class="modal-body">
+        <view class="modal-content">
+            <icon bindtap="hide" class="knowBtn" size="40" type="cancel"></icon>
+            <image class="fenxiang" src="/images/fahongbao.png"></image>
+            <button class="buttonshare" data-id="555" openType="share" size="mini" type="">立即分享</button>
+        </view>
+    </view>
+</view>

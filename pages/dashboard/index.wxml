@@ -1,0 +1,60 @@
+<view class="container">
+    <view bindtap="selectCity" class="HotName" formType="submit">{{city.name}}
+        <view class="tip">切换地区</view>
+    </view>
+    <view class="HotMark">当地吃喝玩乐限时特惠</view>
+    <view class="HotSwiper">
+        <swiper autoplay="true" circular="true" duration="2000" interval="3000" nextMargin="{{windowWidth/3.8}}rpx" previousMargin="{{windowWidth/3.8}}rpx">
+            <navigator url="/pages/team/team?id={{item.id}}" wx:for="{{hotList}}" wx:key="{{id}}">
+                <swiper-item>
+                    <view class="swiper-box">
+                        <form bindsubmit="saveFormId" class="form_class" reportSubmit="true">
+                            <button class="form_button" formType="submit">
+                                <image data-id="{{item.id}}" src="{{item.image}}"></image>
+                            </button>
+                        </form>
+                        <view class="swiper-box-info">
+                            <view class="name">{{item.title}}</view>
+                            <view class="price">
+                                <view>
+                                    <view class="counterPrice" style="float:left">原价：￥{{item.sellerprice}}</view>
+                                    <view class="retailPrice" style="float:left;margin-left:20rpx">抢购价：￥{{item.price}}</view>
+                                    <view style="clear:both"></view>
+                                </view>
+                                <view class="beginTime">开抢时间：{{item.qiang_begin_time}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </swiper-item>
+            </navigator>
+        </swiper>
+    </view>
+    <view class="a-section a-groupon">
+        <view class="h">
+            <view class="title">
+                <view>
+                    <text class="txt">更多产品</text>
+                </view>
+            </view>
+        </view>
+        <view class="b">
+            <view class="item" wx:for="{{teamList}}" wx:key="id">
+                <navigator url="/pages/team/team?id={{item.id}}">
+                    <image backgroundSize="cover" class="img" src="{{item.image}}"></image>
+                    <view class="right">
+                        <view class="text">
+                            <view class="header">
+                                <text class="name">{{item.title}}</text>
+                            </view>
+                            <view class="price">
+                                <view class="counterPrice">原价：￥{{item.sellerprice}}</view>
+                                <view class="retailPrice">抢购价：￥{{item.price}}</view>
+                            </view>
+                            <view class="desc">开抢时间：{{item.qiang_begin_time}}</view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

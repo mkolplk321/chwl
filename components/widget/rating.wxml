@@ -1,0 +1,9 @@
+<template name="m-rating">
+    <view class="m-rating">
+        <block wx:for="{{[1,2,3,4,5]}}" wx:for-item="index">
+            <image src="../../images/destination/star_s.png" wx:if="{{index<=count}}"></image>
+            <image src="../../images/destination/semistar_s.png" wx:if="{{index>count&&index-1<count}}"></image>
+            <image src="../../images/destination/unstar_s.png" wx:if="{{index>count&&!(index-1<count)}}"></image>
+        </block>
+    </view>
+</template>

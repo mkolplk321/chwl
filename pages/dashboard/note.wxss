@@ -1,0 +1,4 @@
+.page__bd textarea {
+    margin: 10rpx;
+    font-size: 28prx;
+}

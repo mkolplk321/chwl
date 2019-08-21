@@ -1,0 +1,128 @@
+.agreement {
+    margin-top: 60rpx;
+    margin-left: 20rpx;
+    font-size: 40rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-title {
+    font-weight: bold;
+}
+
+.ccp1 {
+    margin-top: 35rpx;
+    font-size: 30rpx;
+}
+
+.agree {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.agree icon {
+    margin-top: 10rpx;
+    margin-right: 5rpx;
+}
+
+.agree_title {
+    font-size: 22rpx;
+    margin-right: 30rpx;
+    color: #6bbd00;
+}
+
+.content-info-line {
+    padding-top: 20rpx;
+    margin-left: 20rpx;
+    border-top: 1px solid;
+    border-color: #f0f0f0;
+    padding-bottom: 20rpx;
+    font-size: 30rpx;
+}
+
+.content-info-line {
+    right: 20rpx;
+    vertical-align: middle;
+}
+
+.operate {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid;
+    border-color: #f0f0f0;
+    padding-bottom: 20rpx;
+}
+
+.deal-price {
+    float: right;
+    padding-right: 20rpx;
+}
+
+.youhui_info {
+    font-size: 25rpx;
+    color: orange;
+    vertical-align: middle;
+    margin-left: 45rpx;
+    margin-top: 3px;
+}
+
+.count_info {
+    width: 50rpx;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    right: 140rpx;
+}
+
+.jian {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    right: 220rpx;
+    margin-top: -5rpx;
+}
+
+.jia {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    right: 50rpx;
+    margin-left: 15rpx;
+    margin-top: -5rpx;
+}
+
+.content-phone {
+    background-color: #f0f0f0;
+    padding-right: 0px;
+    padding: 20rpx;
+    font-size: 30rpx;
+}
+
+.amount {
+    position: absolute;
+    right: 20rpx;
+    color: orange;
+}
+
+.input-wrapper {
+    background-color: white;
+    border: 1px solid white;
+    margin-bottom: 40rpx;
+    vertical-align: middle;
+    padding-left: 20rpx;
+}
+
+.input-wrapper input {
+    font-size: 30rpx;
+    height: 45px;
+    line-height: 45px;
+}
+
+.button {
+    background-color: #f0f0f0;
+}

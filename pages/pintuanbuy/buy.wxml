@@ -1,0 +1,38 @@
+<view>
+    <view class="agreement">
+        <text class="content-title">{{team_name}}</text>
+        <text class="ccp1">入园前均可购买</text>
+        <view class="agree">
+            <icon size="16" type="success"></icon>
+            <text class="agree_title">官方限时特惠</text>
+            <icon size="16" type="success"></icon>
+            <text class="agree_title">比美团价更低</text>
+            <icon size="16" type="success"></icon>
+            <text class="agree_title">平台独家产品</text>
+        </view>
+    </view>
+    <view class="content-info-line">有效期：
+    <text class="deal-price">{{start_time}}至 {{end_time}}</text>
+    </view>
+    <view class="content-info-line">单 价：
+    <text class="deal-price">{{referprice}}元</text>
+    </view>
+    <view class="operate content-info-line">数 量 ：
+    <text class="youhui_info"></text>
+        <image catchtap="jian" class="jian" src="../../images/icon_jian.png"></image>
+        <input class="count_info" disabled="true" placeholder="" type="number" value="{{number}}"></input>
+        <image catchtap="jia" class="jia" src="../../images/icon_jia.png"></image>
+    </view>
+    <view class="content-info-line">总 价：
+    <text class="amount" id="money">{{summoney}}元</text>
+    </view>
+    <view class="button">
+        <view class="content-phone">输入手机号码 </view>
+        <view class="login-wrapper">
+            <view class="input-wrapper">
+                <input bindblur="phoneinput" placeholder="输入手机号用于接收凭证" type="number" value="{{phone}}"></input>
+            </view>
+        </view>
+        <button catchtap="orderbuy" style="margin-left:20rpx;margin-right:20rpx;" type="primary">提交订单</button>
+    </view>
+</view>

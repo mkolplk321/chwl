@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "产品",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "i-action-sheet": "../../dist/action-sheet/index",
+        "i-icon": "../../dist/icon/index"
+    }
+}

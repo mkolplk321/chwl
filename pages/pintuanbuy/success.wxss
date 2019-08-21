@@ -1,0 +1,47 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+page {
+    background-color: #fff;
+}
+
+.modal-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background: rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+.modal-body {
+    position: relative;
+}
+
+.modal-content {
+    width: 80%;
+    height: 1800rpx;
+    margin-left: 10%;
+    margin-top: 10%;
+    overflow: hidden;
+    border-radius: 10rpx;
+}
+
+.modal-content .fenxiang {
+    width: 90%;
+    height: 40%;
+    border-radius: 25rpx;
+    margin-left: 5%;
+}
+
+.knowBtn {
+    float: right;
+}
+
+.buttonshare {
+    position: relative;
+    width: 90%;
+    color: red;
+    background-color: yellow;
+    border-radius: 25rpx;
+    margin-left: 5%;
+}

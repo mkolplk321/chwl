@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "區域选择",
+    "usingComponents": {
+        "list-html": "/components/city/citylist"
+    }
+}

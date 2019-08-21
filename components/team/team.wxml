@@ -1,0 +1,133 @@
+<template name="m-pintuans">
+    <view class="shouye_team">
+        <view class="team_left">
+            <image bindtap="viewTeam" class="shouye_team_img" data-id="{{team.id}}" data-title="{{team.title}}" mode="aspectFill" src="{{team.image}}"></image>
+        </view>
+        <view class="team_right">
+            <text class="righttext team_title">{{team.title}}</text>
+            <text class="righttex team_danjian">{{team.collage_num}}人成团 单买价:{{team.sellerprice}} </text>
+            <view class="tuan_price">
+                <view class="righttex team_price">￥{{team.price}}</view>
+                <view bindtap="viewTeam" class="gototuan" data-id="{{team.id}}" data-title="{{team.title}}">去开团</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="m-team_a">
+    <view class="goods_list tuan-new div" style="">
+        <view class="tuan_g div">
+            <view class="i"></view>
+            <navigator hoverClass="none" url="">
+                <view class="tuan_g_img div">
+                    <image bindtap="viewTeam" class="loadThumb img" data-id="{{team.id}}" data-title="{{team.title}}" mode="aspectFill" src="{{team.image}}"></image>
+                </view>
+                <view class="tuan_goods_info div">
+                    <view class="p tuan_goods_name">{{team.title}}</view>
+                    <view class="p tuan_goods_cx">
+                        <view class="span"></view>
+                    </view>
+                </view>
+                <view class="tuan_goods_core div">
+                    <view bindtap="viewTeam" class="tuan_goods_btn div" data-id="{{team.id}}" data-title="{{team.title}}">
+            去报名
+          </view>
+                    <view class="tuan_goods_price">
+                        <view class="red span">
+                            <view class="small">￥
+                <text>{{team.price}} </text>
+                                <text class="span group-desc"> 时间: {{team.qiang_begin_time}} </text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</template>
+<template name="m-pintuan">
+    <view class="goods_list tuan-new div" style="">
+        <view class="tuan_g div">
+            <view class="i"></view>
+            <navigator hoverClass="none" url="">
+                <view class="tuan_g_imgs div">
+                    <image bindtap="viewTeam" class="loadThumb imgs" data-id="{{team.id}}" data-title="{{team.title}}" mode="aspectFill" src="{{team.image}}"></image>
+                </view>
+                <view class="tuan_goods_info div">
+                    <view class="p tuan_goods_name">{{team.title}}</view>
+                    <view class="p tuan_goods_cx">
+                        <view class="span"></view>
+                    </view>
+                </view>
+                <view class="tuan_goods_core div">
+                    <view bindtap="viewTeam" class="tuan_goods_btn div" data-id="{{team.id}}" data-title="{{team.title}}">
+            去开团
+          </view>
+                    <view class="tuan_goods_price">
+                        <view class="red span">
+                            <view class="small">￥
+                <text>{{team.price}} </text>
+                                <text class="span group-desc">{{team.collage_num}}人成团 单买价:{{team.sellerprice}} </text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</template>
+<template name="m-teams">
+    <view class="goods_list tuan-new div" style="">
+        <view class="tuan_g div">
+            <view class="i"></view>
+            <navigator hoverClass="none" url="">
+                <view class="tuan_g_img div">
+                    <image bindtap="viewTeam" class="loadThumb img" data-id="{{team.id}}" data-title="{{team.title}}" mode="aspectFill" src="{{team.image}}"></image>
+                </view>
+                <view class="tuan_goods_info div">
+                    <view class="p tuan_goods_name">{{team.title}}</view>
+                    <view class="p tuan_goods_cx">
+                        <view class="span"></view>
+                    </view>
+                </view>
+                <view class="tuan_goods_core div">
+                    <view bindtap="viewTeam" class="tuan_goods_btn div" data-id="{{team.id}}" data-title="{{team.title}}">
+            去抢票
+          </view>
+                    <view class="tuan_goods_price">
+                        <view class="red span">
+                            <view class="small">￥
+                <text>{{team.price}} </text>
+                                <text class="span group-desc"> 开抢: {{team.qiang_begin_time}} </text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</template>
+<template name="m-team">
+    <view bindtap="viewTeam" data-id="{{team.id}}" data-title="{{team.title}}">
+        <view class="jchd1_t">
+            <image alt="" src="{{team.image}}"></image>
+        </view>
+        <view class="jchd1_b">
+            <view class="jchd1_b1">
+                <view class="jchd1_b1_l">
+          {{team.title}}
+        </view>
+                <view class="jchd1_b1_r">
+          ￥{{team.price}}元
+        </view>
+            </view>
+        </view>
+        <view class="jchd1_b">
+            <view class="jchd1_b1">
+                <view class="jchd1_b1_l">
+                    <text>开抢时间： {{team.qiang_begin_time}} </text>
+                </view>
+            </view>
+        </view>
+        <view class="kong"></view>
+    </view>
+</template>

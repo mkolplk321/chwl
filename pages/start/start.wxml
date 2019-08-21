@@ -1,0 +1,4 @@
+<image bindtap="begin" class="img" src="/images/start15.jpg"></image>
+<view hidden="{{nonet}}">
+    <view>当前网络不可用，请检查您的网络</view>
+</view>

@@ -1,0 +1,14 @@
+<view class="searchLetter touchClass">
+    <view catchtouchend="searchEnd" catchtouchmove="searchMove" catchtouchstart="searchStart" data-letter="{{item.name}}" style="height:{{itemH}}px" wx:for="{{searchLetter}}" wx:key="index">{{item.name}}</view>
+</view>
+<view class="showSlectedLetter" wx:if="{{isShowLetter}}">
+    {{showLetter}}
+</view>
+<scroll-view bindscroll="bindScroll" scrollTop="{{scrollTop}}" scrollY="true" style="height:{{winHeight}}px">
+    <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
+        <view class="item_letter">{{item.initial}}</view>
+        <view bindtap="selectCity" class="item_city" data-city="{{ct.city}}" data-id="{{ct.id}}" data-name="{{ct.city}}" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}">
+              {{ct.city}}  
+        </view>
+    </view>
+</scroll-view>

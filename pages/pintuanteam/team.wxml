@@ -1,0 +1,112 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<scroll-view bindscrolltolower="scrolltolower" class="scroll-view-y" lowerThreshold="50" scrollTop="{{scrollTop}}" scrollWithAnimation="true" scrollY="true" style="height: {{windowHeight-50}}px;">
+    <image src="{{team_detail.image}}" style="width:100%;margin-bottom:10px;"></image>
+    <view class="title" style="width:100%;">
+        <view class="title_left">
+            <text class="goods-price">¥{{team_detail.referprice}}</text>
+            <text class="origin-price">¥{{team_detail.sellerprice}}</text>
+            <view class="goods-sale"> 已团{{team_detail.tuan_count}}个·{{team_detail.collage_num}}人团 </view>
+        </view>
+        <view class="title_right">
+            <image src="/images/share.png" style="width:40rpx;height:40rpx;margin-left:5rpx;"></image>
+            <view class="share-text">分享</view>
+            <button class="share-btn" openType="share"></button>
+        </view>
+    </view>
+    <view class="title_title">
+        <text>{{team_detail.title}}   <text class="yushou">2小时极速成团</text>
+        </text>
+        <view bindtap="shareCircle" class="" style="float:right;margin-right:30px;font-size:12px;color:red;" wx:if="{{is_show==1}}">下载推广海报</view>
+    </view>
+    <view bindtap="showServer" class="server" data-statu="open">
+        <image src="/images/yes.png"></image>
+        <text>官方限时特惠</text>
+        <image src="/images/yes.png"></image>
+        <text>比美团价更低</text>
+        <image src="/images/yes.png"></image>
+        <text>平台独家产品</text>
+    </view>
+    <view class="tuan_detail">
+        <view class="tuan_detail_title_content">
+            <view class="tuan_detail_title" style="color:red;">直接参团购买，可立刻收到入园凭证</view>
+            <view bindtap="moretuanlist" class="tuan_detail_title_go">查看更多></view>
+        </view>
+        <swiper autoplay="true" circular="true" interval="2000" vertical="true">
+            <swiper-item wx:for="{{tuan_detail}}" wx:key="unique">
+                <view class="tuan_detail_li">
+                    <view class="user_img left">
+                        <image src="{{item.user_img}}" style="width:100rpx;height:100rpx;"></image>
+                    </view>
+                    <view class="user_name left">{{item.user_name}}</view>
+                    <view class="user_count left">
+                        <text>还差<text style="color:red;">{{item.worse}}人</text>拼成</text>
+                        <text>立刻获得凭证</text>
+                    </view>
+                    <view bindtap="gotobuy" class="btn right" data-id="{{item.id}}">去参团</view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="clearfix"></view>
+    </view>
+    <view class="notice-item">
+        <view class="notice-item-title">平台声明</view>
+        <view class="notice-item-des">
+            <text>1、本产品只限本人使用或转赠亲友，不允许在除我司平台外的其他网络平台进行销售，杜绝二次售卖，一经发现，景区方有权取消其验证码的使用资格，并不予以退款！</text>
+            <text>2、购买购买此产品视为认同此声明以及活动规则。</text>
+            <text>3、持短信或者二维码即可入园，无需预约！。</text>
+        </view>
+    </view>
+    <view class="notice-item">
+        <view class="notice-item-title">详情介绍</view>
+        <view class="notice-item-des">
+            <template is="wxParse" data="{{wxParseData:detail.nodes}}"></template>
+        </view>
+    </view>
+    <view class="notice-item">
+        <view class="notice-item-title">特别提示</view>
+        <view class="notice-item-des">
+            <view>1、如果单独购买成功以后，可申请退款。</view>
+            <view>2、如果拼团成功获得凭证以后，因为您已享受优惠价格，不允许退款，但可转赠。</view>
+            <view>3、您一旦购买成功则默认您同意上述两条约定。 </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="footers">
+    <view bindtap="gotowode" class="foot_shouye footer_line">
+        <image mode="aspectFill" src="/images/wode0.png" style="width:38rpx;height:38rpx;"></image>
+        <view class="mt-10">我的</view>
+    </view>
+    <view class="foot_shouye footer_line">
+        <image mode="aspectFill" src="/images/kefu.png" style="width:38rpx;height:38rpx;"></image>
+        <view class="mt-10">客服</view>
+    </view>
+    <button class="kefubut" openType="contact"></button>
+    <view bindtap="buytuan" class="foot_yijian footer_line" data-agent-id="{{team_detail.agentid}}" data-end-time="{{team_detail.expire_time}}" data-refer-price="{{team_detail.referprice}}" data-sell-price="{{team_detail.sellerprice}}" data-start-time="{{team_detail.expire_start_time}}" data-team-id="{{team_detail.id}}" data-team-name="{{team_detail.title}}" data-type="1">
+        <view>¥{{team_detail.sellerprice}}</view>
+        <view class="mt-10">单独购买</view>
+    </view>
+    <view bindtap="buytuan" class="foot_onebuy footer_line" data-agent-id="{{team_detail.agentid}}" data-end-time="{{team_detail.expire_time}}" data-refer-price="{{team_detail.referprice}}" data-sell-price="{{team_detail.sellprice}}" data-start-time="{{team_detail.expire_start_time}}" data-team-id="{{team_detail.id}}" data-team-name="{{team_detail.title}}" data-type="2">
+        <view>¥{{team_detail.referprice}}</view>
+        <view class="mt-10">一键开团</view>
+    </view>
+</view>
+<modal noCancel bindconfirm="modalOk" class="modal" confirmText="我知道了" hidden="{{modalflag}}">
+    <view style="width:100%;height:200px;">
+        <view class="tuan_detail_lia" wx:for="{{tuan_detail}}" wx:key="unique">
+            <view class="user_imga left">
+                <image src="{{item.user_img}}" style="width:50rpx;height:50rpx;"></image>
+            </view>
+            <view class="user_namea left">{{item.user_name}}</view>
+            <view class="user_counta left">
+                <text>还差<text style="color:red;">{{item.worse}}人</text>拼成</text>
+                <text>立刻获得凭证</text>
+            </view>
+            <view bindtap="gotobuy" class="btna right" data-id="{{item.id}}">去参团</view>
+        </view>
+    </view>
+</modal>
+<view>
+    <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>

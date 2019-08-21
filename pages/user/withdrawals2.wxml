@@ -1,0 +1,41 @@
+<view>
+    <view class="swiper-tab">
+        <view bindtap="channelRendered" class="swiper-tab-list {{bannav==1?'on':''}}" data-id="1">提现</view>
+        <view bindtap="channelRendered" class="swiper-tab-list {{bannav==2?'on':''}}" data-id="2">提现记录</view>
+    </view>
+</view>
+<view wx:if="{{bannav==1}}">
+    <view class="navicat">
+        <text class="nav center"> 可提现金额 </text>
+    </view>
+    <view class="navicat">
+        <text class="nav center">
+            <text class="money k"> {{k_withdraw}}</text>
+        </text>
+    </view>
+    <view class="navicat">
+        <text class="nav left">已提现金额:<text class="money"> {{y_withdraw}}</text>
+        </text>
+        <text class="nav right"> 邀请总人数: <text class="money"> {{z_withdraw}}</text>
+        </text>
+    </view>
+    <view>
+        <button bindtap="withdraw" size="default" style="margin-left:20rpx;margin-right:20rpx;" type="primary">提现</button>
+    </view>
+</view>
+<view wx:if="{{bannav==2}}">
+    <view class="search_no" wx:if="{{!withdraw_log.length}}">
+        <view class="font_14">
+            <image class="scimg" src="../../images/search_no.png"></image>
+        </view>
+        <text>暂没有提现记录/(ㄒoㄒ)/~~</text>
+    </view>
+    <view class="withdrawlog">
+        <scroll-view bindscrolltolower="loadMore" class="list" lowerThreshold="800" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+            <view class="withdrawli" wx:for="{{withdraw_log}}" wx:for-index="idx" wx:for-item="coupon">
+                <text class="withdrawmoney">     金额: {{coupon.money}}</text>
+                <text class="withdrawtime">时间：{{coupon.add_time}}</text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

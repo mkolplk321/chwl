@@ -1,0 +1,14 @@
+.page__desc {
+    text-align: center;
+    margin: 50rpx;
+}
+
+.weui-cells__tips {
+    color: goldenrod;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.weui-label {
+    color: #999;
+}

@@ -1,0 +1,15 @@
+<view>
+    <view class="header">
+        <text>共计成员：{{count}}个</text>
+    </view>
+    <scroll-view bindscrolltolower="loadMore" class="list" lowerThreshold="800" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+        <view class="content" wx:for="{{teams}}" wx:for-item="coupon">
+            <view class="left">
+                <image class="image" src="{{coupon.avatarurl}}" style="width:100rpx;height:100rpx;"></image>
+            </view>
+            <view class="center">
+                <text class="centertext">{{coupon.realname}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

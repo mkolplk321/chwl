@@ -1,0 +1,12 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd"></view>
+    <view class="page__bd">
+        <view class="weui-cells__title">填入您想玩的</view>
+        <textarea autoFocus placeholder="没有您想玩的，点击这里告诉我们您想玩的，24小时内为您提供您所需" style="width:100%;"></textarea>
+        <view class="weui-btn-area">
+            <form bindsubmit="formSubmit" reportSubmit="true">
+                <button bindtap="showTopTips" class="weui-btn" formType="submit" style="background-color:#4bc6d8" type="primary">确定</button>
+            </form>
+        </view>
+    </view>
+</view>

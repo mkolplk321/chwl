@@ -1,0 +1,175 @@
+@import "../../components/team/team.wxss";
+
+@import "../../__wuBaseWxss__/2.wxss";
+
+page {
+    width: 100%;
+    height: 100%;
+}
+
+.pintuan {
+    width: 100%;
+    height: 298rpx;
+    position: absolute;
+    top: 80rpx;
+}
+
+.tuijian {
+    width: 100%;
+    height: 300rpx;
+    border: 1px;
+    position: absolute;
+    top: 400rpx;
+}
+
+.weui-search-bar {
+    margin-right: 10px;
+}
+
+.m-trip {
+    margin: 20rpx;
+}
+
+.slide-image {
+    border-bottom: 10px solid red;
+}
+
+.trip-title {
+    margin-bottom: 10rpx;
+}
+
+.loading {
+    color: #b0b0b0;
+    text-align: center;
+    margin: 20rpx 0;
+}
+
+.loading-gif {
+    width: 220rpx;
+    height: 42rpx;
+    vertical-align: bottom;
+}
+
+.top {
+    width: 100%;
+    height: 80rpx;
+    position: absolute;
+    top: 0px;
+    background: #ff2d4b;
+    vertical-align: middle;
+    z-index: 1000;
+    margin-bottom: 10px;
+}
+
+#go-top {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 6%;
+    bottom: 15%;
+    z-index: 999;
+    background: url(https://www.vip0351.com/images/top.png) no-repeat;
+    background-size: contain;
+    opacity: 0;
+    -webkit-transition: bottom 0.8s ease,opacity 0.6s ease;
+    webkit-transition: bottom 0.8s ease,opacity 0.6s ease;
+}
+
+.for-margin-top {
+    margin-top: 20px;
+}
+
+.top_l {
+    margin-right: 10px;
+    height: 64px;
+    float: left;
+    line-height: 32px;
+    padding-right: 10rpx;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.top-l text {
+    width: 35px;
+    overflow: hidden;
+}
+
+.top_l image {
+    position: absolute;
+    top: 30rpx;
+    margin-left: 8rpx;
+    margin-right: 18rpx;
+    width: 10px;
+    height: 6px;
+    text-align: left;
+}
+
+.navtop {
+    width: 100%;
+    height: 80rpx;
+    white-space: nowrap;
+    position: absolute;
+    top: 700rpx;
+    font-size: 12px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.nav {
+    height: 80rpx;
+    display: inline-block;
+    line-height: 80rpx;
+    text-align: center;
+    width: 20%;
+}
+
+.on {
+    color: #dd2727;
+    border-bottom: 5rpx solid #dd2727;
+}
+
+.tuijianleft {
+    width: 49%;
+    float: left;
+    height: 100%;
+}
+
+.tuijianright {
+    width: 49%;
+    float: right;
+    height: 100%;
+}
+
+.team {
+    width: 100%;
+    height: 250rpx;
+    position: absolute;
+    top: 815rpx;
+}
+
+.xianshitehui {
+    position: absolute;
+    left: 0;
+    width: 90px;
+    height: 17px;
+}
+
+.tuijianleft .wenzi {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 49%;
+    height: 30px;
+    background: #a9a9a9;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.pintuantuijian {
+    position: absolute;
+    left: 51%;
+    height: 100%;
+    width: 49%;
+}

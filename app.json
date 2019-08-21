@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/dashboard/index",
+    "pages/shouye/shouye",
+    "pages/start/start",
+    "pages/city/pintuancity",
+    "pages/city/shouyecity",
+    "pages/user/withdrawals2",
+    "pages/mymember/mymember",
+    "pages/index/index",
+    "pages/team/team",
+    "pages/buy/buy",
+    "pages/city/city",
+    "pages/order/detail",
+    "pages/user/xs_coupon",
+    "pages/gethb/gethb",
+    "pages/buy/success",
+    "pages/pintuan/index",
+    "pages/user/mypintuan",
+    "pages/user/user",
+    "pages/user/orders",
+    "pages/active/index",
+    "pages/activebuy/buy",
+    "pages/activebuy/success",
+    "pages/activeteam/team",
+    "pages/city/activecity",
+    "pages/share/circle",
+    "pages/city/list",
+    "pages/user/register-master",
+    "pages/dashboard/category",
+    "pages/dashboard/list",
+    "pages/dashboard/search",
+    "pages/dashboard/note"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "color": "#b0b0b0",
+    "selectedColor": "#4abdcc",
+    "backgroundColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/dashboard/index",
+        "text": "限时抢购",
+        "iconPath": "images/icon_qianggou_gray.png",
+        "selectedIconPath": "images/icon_qianggou_blue.png"
+      },
+      {
+        "pagePath": "pages/dashboard/category",
+        "text": "分类",
+        "iconPath": "images/icon_category_gray.png",
+        "selectedIconPath": "images/icon_category_blue.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/icon_mine.png",
+        "selectedIconPath": "images/icon_mine_blue.png"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

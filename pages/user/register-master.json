@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "申请成为群主",
+    "usingComponents": {
+        "i-icon": "../../dist/icon/index"
+    }
+}

@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="search">
+        <navigator class="input" url="/pages/dashboard/search">
+            <image class="icon"></image>
+            <text class="txt">搜索</text>
+        </navigator>
+    </view>
+    <view class="menu-box">
+        <view class="menu-box-list">
+            <view class="menu-list-pro">
+                <navigator bindtap="levelClick" class="menu-list-item" data-id="{{item.id}}" url="/pages/dashboard/list?category_id={{item.id}}" wx:for="{{categoryList}}" wx:key="id">
+                    <image class="icon" src="{{item.iconImg}}"></image>
+                    <text class="txt">{{item.name}}</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

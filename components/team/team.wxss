@@ -1,0 +1,592 @@
+.jchd1_t {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.jchd1_t image {
+    width: 100%;
+    height: 100%;
+}
+
+.jchd1_t1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50px;
+    background: #0ecc5f;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.jchd1_b {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.jchd1_b1 {
+    width: 100%;
+    line-height: 30px;
+    font-size: 15px;
+    color: #272727;
+}
+
+.jchd1_b1_l {
+    float: left;
+    padding-left: 5px;
+    color: #171717;
+}
+
+.jchd1_b1_r {
+    float: right;
+    padding-right: 5px;
+    color: #ea0021;
+}
+
+.jchd1_b1_r .ori_price {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.jchd1_b1_l text {
+    color: #5c5c5c;
+}
+
+.kong {
+    width: 100%;
+    background: #f5f5f5;
+    height: 25rpx;
+}
+
+#main {
+    color: #666;
+    font-family: Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Arial;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.p {
+    display: inline;
+}
+
+#main,.div.navbar,.header {
+    margin: auto;
+    max-width: 640px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-color: #eceded;
+}
+
+.index_loctaion {
+    position: fixed;
+    top: 0;
+    z-index: 10015;
+    height: 34px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.index_loctaion .location .i {
+    display: inline-block;
+    z-index: 10016;
+    float: left;
+    margin: 8px -10px 0 8px;
+    height: 25px;
+    width: 32px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAiCAYAAABMfblJAAAAAXNSR…a2divItoNUiBe/JhD5BvcwBM4mk8nzkUhE/ypYKP4/8x8fIvq5xVc61AAAAABJRU5ErkJggg==) no-repeat;
+    background-size: 15px 18px;
+}
+
+.index_loctaion .location .span {
+    display: inline-block;
+    z-index: 10016;
+    float: left;
+    height: 34px;
+    width: 32px;
+    line-height: 34px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.tuan {
+    min-height: 100%;
+}
+
+#channelSlider {
+    max-width: 640px;
+    position: fixed;
+    height: 46.4px;
+    top: 0px;
+    width: 100%;
+    z-index: 10015;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#channelSlider .ch-left {
+    background-image: linear-gradient(270deg,hsla(0,0%,100%,0) 0,#fff);
+    width: 35.2rpx;
+    float: left;
+}
+
+#channelSlider .ch-left,#channelSlider .ch-right {
+    z-index: 10015;
+    height: inherit;
+    overflow: hidden;
+    position: absolute;
+}
+
+#channelSlider .ch-right {
+    background-image: linear-gradient(90deg,hsla(0,0%,100%,0) 0,#fff);
+    right: 0;
+    float: right;
+}
+
+#channelSlider .ch-content {
+    position: relative;
+    height: 46.4px;
+    font-size: 15px;
+    font-family: Hiragino Sans GB;
+    color: #626262;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+    padding: 0 3%;
+    z-index: 10010;
+    -webkit-overflow-scrolling: touch;
+    width: 94%;
+}
+
+#channelSlider .ch-content .li:first-child {
+    margin-left: 0;
+}
+
+#channelSlider .ch-content .ch-tab-item {
+    height: 46.4px;
+    display: inline-block;
+    margin-left: 32px;
+    line-height: 46.4px;
+    text-align: center;
+    z-index: 10005;
+}
+
+#channelSlider .ch-content .cur-ch-tab {
+    border-bottom: 2px solid #093;
+    color: #093;
+    height: 43.6px;
+    display: inline-block;
+    position: relative;
+    z-index: 10005;
+}
+
+#channelSlider .ch-content .ch-tab {
+    color: #626262;
+    height: 45.6px;
+    display: inline-block;
+    position: relative;
+    z-index: 10005;
+}
+
+#channelSlider .ch-content .li:first-child {
+    margin-left: 0;
+}
+
+#channelSlider .ch-content .ch-tab-item {
+    height: 46.4px;
+    display: inline-block;
+    margin-left: 32px;
+    line-height: 46.4px;
+    text-align: center;
+    z-index: 10005;
+}
+
+.tuan-new {
+    padding: 0 1px;
+}
+
+.goods_list {
+    overflow: hidden;
+}
+
+.tuan_g {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    border-bottom: 10px solid #e8e8e8;
+}
+
+.tuan_g_img {
+    display: block;
+    position: relative;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAEsCAMAAABkJfIZAAAAGXRFW…AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADY4H8CDADljnflZlO+SAAAAABJRU5ErkJggg==) 50% 50% no-repeat;
+}
+
+.tuan_g_img .img {
+    display: block;
+    overflow: hidden;
+    width: 94%;
+    padding: 3% 3% 0 3%;
+}
+
+.tuan_g_imgs .imgs {
+    display: block;
+    overflow: hidden;
+    width: 94%;
+    padding: 0 3% 0 3%;
+}
+
+.tuan_g_imgs .imgss {
+    display: block;
+    overflow: hidden;
+    width: 25%;
+    height: 200rpx;
+    float: left;
+}
+
+.tuan-new .label-orange-hot {
+    line-height: 35px;
+    background: url(https://91364949.qcloud.la/images/label-orange-hot.png);
+    background-size: 42px 60px;
+}
+
+.tuan-new .goods-tag {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: 42px;
+    height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: PingFang;
+}
+
+.tuan-new .tuan_goods_info {
+    padding: 9px 11px;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_name {
+    font-size: 15px;
+    color: #333;
+    height: 21.6px;
+    line-height: 18.88px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    vertical-align: middle;
+    padding: 0 1.6px;
+    word-break: break-all;
+    white-space: normal;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    text-overflow: clip;
+    word-wrap: break-word;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_cx {
+    padding: 6px 0 4px;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_cx .span {
+    padding-right: 4px;
+}
+
+.tuan-new .tuan_goods_core {
+    padding: 0 11px 12px;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_btn {
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    background-color: #ff676d;
+    border-radius: 3px;
+    width: 65px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 12px;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_btn ::after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 5px;
+    height: 8px;
+    background: url("https://91364949.qcloud.la/images/groups_op.png") no-repeat;
+    background-size: 5px 8px;
+    margin-left: 2px;
+    top: -1px;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_btn .tmp {
+    padding: 0 5px;
+    background: url(https://91364949.qcloud.la/images/tuan_goods_core.png) no-repeat 50%;
+    background-size: 1px auto;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price {
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .red {
+    font-size: 19.2px;
+    color: #e7414d;
+    margin-right: 0.06rem;
+    font-weight: 700;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .divide {
+    color: #878787;
+    font-size: 16px;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .spec {
+    color: #878787;
+    font-size: 13px;
+}
+
+.pullUp_show_load_last {
+    margin-top: 7px;
+}
+
+.pullUp_show,.pullUp_show_load_last {
+    height: 45px;
+    width: 100%;
+    visibility: visible;
+}
+
+.center .tip-last {
+    line-height: 20px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.tuan {
+}
+
+.index_loctaion {
+    position: fixed;
+    top: 0;
+    z-index: 10015;
+    height: 34px;
+    width: 100%;
+    background-color: #1aad19;
+}
+
+.index_loctaion .location .i {
+    display: inline-block;
+    z-index: 10016;
+    float: left;
+    margin: 8px -10px 0 8px;
+    height: 25px;
+    width: 32px;
+    background: url(http://www.vip0351.com/images/map.png) no-repeat;
+    background-size: 15px 18px;
+}
+
+.index_loctaion .location-arrow {
+    float: right;
+    display: inline-block;
+    margin: 10px 0;
+    width: 22px;
+    height: 22px;
+    background: url(http://www.vip0351.com/images/right.png) no-repeat;
+    background-size: 10px 14px;
+}
+
+#slider {
+    height: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 44.6px;
+}
+
+.clear-both {
+    clear: both;
+}
+
+#go-top {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 6%;
+    bottom: 15%;
+    z-index: 999;
+    background: url(https://www.vip0351.com/images/top.png) no-repeat;
+    background-size: contain;
+    opacity: 0;
+    -webkit-transition: bottom 0.8s ease,opacity 0.6s ease;
+    webkit-transition: bottom 0.8s ease,opacity 0.6s ease;
+}
+
+.group-desc {
+    font-size: 10px;
+    color: #9c9c9c;
+    font-weight: lighter;
+}
+
+.tuan-new_two {
+    width: 48%;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.03rem;
+}
+
+.tuan-new_two .tuan_goods_name {
+    padding: 0.1rem 0.09rem 0 0.1rem;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-align: justify;
+    font-size: 8px;
+    color: #333;
+    height: 44px;
+    line-height: 15;
+}
+
+.recommend .ul .li {
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.recommend .ul .li .img .img {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.recommend .ul .li .desc {
+    height: 52px;
+    text-align: left;
+}
+
+.recommend .ul .li .desc .text {
+    display: block;
+    width: 100%;
+    height: 18px;
+    padding: 5px 0 0 0;
+    line-height: 16px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.recommend .ul .li .desc .detail {
+    height: 24px;
+    line-height: 24px;
+}
+
+.recommend .ul .li .desc .price {
+    line-height: 24px;
+    color: #f48600;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.recommend .ul .li .desc .price .small {
+    padding-right: 2px;
+}
+
+.recommend .ul .li .desc .spec {
+    color: #878787;
+    font-size: 12px;
+}
+
+.recommend .ul {
+    width: 100%;
+    padding: 0 0;
+}
+
+.recommendA {
+    background-color: #fff;
+    margin-top: 55px;
+    padding-bottom: 20px;
+}
+
+.shouye_team {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.team_left {
+    width: 40%;
+    height: 100%;
+}
+
+.team_right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.shouye_team_img {
+    display: block;
+    overflow: hidden;
+    width: 250rpx;
+    height: 200rpx;
+    float: left;
+}
+
+.team_title {
+    font-size: 30rpx;
+}
+
+.team_danjian {
+    font-size: 10px;
+    color: #9c9c9c;
+    font-weight: lighter;
+    margin-top: 15px;
+}
+
+.team_price {
+    font-size: 20px;
+    color: #e7414d;
+    margin-right: 0.06rem;
+    font-weight: 700;
+}
+
+.tuan_price {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.gototuan {
+    position: absolute;
+    right: 10rpx;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    background-color: #ff676d;
+    border-radius: 3px;
+    width: 65px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 12px;
+}

@@ -1,0 +1,62 @@
+<import src="../../components/team/team.wxml"></import>
+<view class="top" style="background:#4bc6d8;">
+    <view bindtap="gotoCityList" class="top_l" id="city_name" style="text-align:left;margin-right:10px">
+        <text style="text-align:center;font-size:12px;">{{city.name}}</text>
+        <image src="../../images/indexxl.png"></image>
+    </view>
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" size="14" style="float:left;top:18rpx;" type="search"></icon>
+                <input bindinput="inputTyping" class="weui-search-bar__input" focus="{{inputShowed}}" placeholder="搜索" style="font-size:12px;" type="text" value="{{inputVal}}"></input>
+                <view bindtap="clearInput" class="weui-icon-clear" wx:if="{{inputVal.length>0}}">
+                    <icon size="14" type="clear"></icon>
+                </view>
+            </view>
+            <label bindtap="showInput" class="weui-search-bar__label" hidden="{{inputShowed}}" style="text-align:left;margin-left:10rpx;">
+                <icon class="weui-icon-search" size="14" type="search"></icon>
+                <view class="weui-search-bar__text" wx:if="{{inputVal.length>0}}">{{inputVal}}</view>
+                <view class="weui-search-bar__text" style="font-size:12px;" wx:if="{{inputVal.length==''}}">搜索</view>
+            </label>
+        </view>
+        <view bindtap="hideInput" class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" style="font-size:12px;">确定</view>
+    </view>
+</view>
+<view class="pintuan">
+    <swiper autoplay="true" duration="1" indicatorDots="true" interval="5000">
+        <swiper-item>
+            <image src="/images/banner.png" style="width:100%;height:300rpx;"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/banner2.png" style="width:100%;height:300rpx;"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="tuijian">
+    <view bindtap="viewTeams" class="tuijianleft" data-id="{{tehui.id}}" data-title="{{tehui.title}}">
+        <image src="{{tehui.image}}" style="width:100%;height:100%;"></image>
+        <image class="xianshitehui" src="/images/xianshitehui.png"></image>
+        <view class="tuijianleft wenzi">
+            <text style="font-size:10px;float:left;line-height:30px;margin-left:25rpx;">{{tehui.title}}.....</text>
+            <text style="font-size:12px;color:red;float:right;font-weight:600;line-height:30px;margin-right:5rpx;">￥{{tehui.price}}</text>
+        </view>
+    </view>
+    <view class="tuijianright"></view>
+    <image bindtap="gotopintuan" class="pintuantuijian" src="/images/pintuantuijian.png"></image>
+</view>
+<view class="navtop">
+    <scroll-view scrollLeft="{{scroll_pos}}" scrollX="true" style="width:100%;overflow:auto;">
+        <view bindtap="choicenav" class="nav li  {{current==0?'on':''}}" data-id="0">首页</view>
+        <view bindtap="choicenav" class="nav li  {{current==item.id?'on':''}}" data-id="{{item.id}}" wx:for="{{nav}}" wx:key="item">{{item.name}}</view>
+    </scroll-view>
+</view>
+<view class="team">
+    <scroll-view scrollY bindscroll="scroll" bindscrolltolower="loadMore" class="list" lowerThreshold="800" scrollTop="{{scroll_Top}}" style="height:{{windowHeight-55}}px; width: {{windowWidth}}px;">
+        <template is="m-pintuans" data="{{team:team,mode:1}}" wx:for="{{teams}}" wx:for-item="team"></template>
+    </scroll-view>
+</view>
+<view>
+    <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>

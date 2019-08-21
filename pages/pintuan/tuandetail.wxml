@@ -1,0 +1,74 @@
+<view>
+    <view class="header">
+        <image src="{{team.image}}"></image>
+        <view class="hleft">
+            <text class="num" wx:if="{{tuan.status==1}}">
+      仅剩<text style="color:red;">{{team.collage_num-tuan.now_number}}</text>个名额</text>
+            <text class="num" style="color:red;" wx:if="{{tuan.status==2}}">拼团成功</text>
+            <text class="refer">￥{{team.referprice}} <text class="seller">￥{{team.sellerprice}}</text>
+            </text>
+            <text class="btn">特惠拼团</text>
+        </view>
+    </view>
+    <scroll-view>
+        <image class="user_img" src="{{tuan_user.avatarurl}}"></image>
+        <view class="tuanzhangtext">团长</view>
+        <block wx:for="{{user_list}}">
+            <view class="nouser_img" wx:if="{{item.user_img==''}}">
+                <text>?</text>
+            </view>
+            <image class="user_img" src="{{item.user_img}}" wx:if="{{item.user_img!=''}}"></image>
+        </block>
+    </scroll-view>
+    <block wx:if="{{tuan.status==1}}">
+        <view class="buttons" style="clear:both;" wx:if="{{is_buy}}">
+            <button openType="share" type="warn">邀请好友参团{{day_show}}天 {{hour_show}}:{{minute_show}}:{{second_show}}后结束</button>
+        </view>
+        <view class="buttons" style="clear:both;" wx:if="{{!is_buy}}">
+            <button bindtap="gotobuy" type="warn">参与活动</button>
+        </view>
+    </block>
+    <view class="buttons" style="clear:both;" wx:if="{{tuan.status==2}}">
+        <button bindtap="gotocoupon" type="warn">查看电子凭证</button>
+    </view>
+    <view class="detailli">
+        <text class="left">商品名称</text>
+        <text bindtap="gotodetail" class="right"> {{team.title}} ></text>
+    </view>
+    <view class="detailli">
+        <text class="left">电子凭证</text>
+        <text class="right" style="color:red;">拼团成功后系统自动发送入园凭证</text>
+    </view>
+    <view bindtap="moretuanlist" class="detailli">
+        <text class="left">拼团须知</text>
+        <text class="right">· 好友参团 · 规定时间</text>
+    </view>
+    <view class="detailline"></view>
+    <view class="footer">
+        <view class="footer_first">
+            <image bindtap="gotopintuan" mode="aspectFill" src="/images/pintuan1.png" style="width:38rpx;height:38rpx;"></image>
+            <view bindtap="gotopintuan" class="mt-10">首页逛逛</view>
+        </view>
+        <view class="footer_first">
+            <image bindtap="gotoindex" mode="aspectFill" src="/images/icon_qianggou.png" style="width:38rpx;height:38rpx;"></image>
+            <view bindtap="gotoindex" class="mt-10">限时抢购</view>
+        </view>
+    </view>
+</view>
+<modal noCancel bindconfirm="modalOk" class="modal" confirmText="我知道了" hidden="{{modalflag}}">
+    <view style="width:80%;height:200px;font-size:30rpx;margin-left:10%;">
+        <view style="text-align:center;height:30px;border-bottom:1px solid #e8e8e8;font-size:30rpx;">活动规则</view>
+        <view style="margin-top:10px;">
+            <text style="color:red;">参与方式：</text>
+            <text>开团邀请好友参团或者参加别人的团，并再规定时间内成团，未达到拼团人数，钱款将自动原路退还。</text>
+        </view>
+        <view style="margin-top:10px;">
+            <text style="text-indent:50rpx; padding-left: 0rpx;">  拼团成功会通过短信自动发送入园电子凭证。</text>
+        </view>
+    </view>
+</modal>
+<view>
+    <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>

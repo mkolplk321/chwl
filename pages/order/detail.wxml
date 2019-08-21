@@ -1,0 +1,66 @@
+<view class="page">
+    <view class="userinfo">
+        <canvas canvasId="mycanvas" class="userinfo-avatar fl_l"></canvas>
+        <text class="fl_l" style="margin-top:15rpx;margin-bottom:30rpx">{{order.code}}</text>
+    </view>
+    <navigator class="qbdd mt10">
+        <text style="font-size:14px;margin-left:100rpx;color:red;">出示该凭证给工作人员核销后即可入园   </text>
+    </navigator>
+    <navigator class="qbdd mt10">
+        <span class="font_14 c3">产品名称</span>
+        <view class="fl_r c9 font_12 l_h20" hoverClass="none">{{order.title}}
+
+
+    </view>
+    </navigator>
+    <view class="qbdd mt10">
+        <navigator>
+            <span class="font_14 c3">有效期</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.expire_time}}</span>
+        </navigator>
+    </view>
+    <view class="qbdd mt10">
+        <navigator>
+            <span class="font_14 c3">使用情况</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> 已使用{{order.verifytime}}次 / 可使用{{order.quantity}}次</span>
+        </navigator>
+    </view>
+    <view class="qbdd mt10">
+        <navigator>
+            <span class="font_14 c3">游玩地址</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.address}}</span>
+        </navigator>
+    </view>
+    <view class="qbdd mt10">
+        <navigator>
+            <span class="font_14 c3">订单编号</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.id}}</span>
+        </navigator>
+    </view>
+    <view class="qbdd mt10">
+        <navigator>
+            <span class="font_14 c3">产品价格</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.price}}</span>
+        </navigator>
+    </view>
+    <view class="qbdd mt10">
+        <navigator>
+            <span class="font_14 c3">订单总价</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.money}}</span>
+        </navigator>
+    </view>
+    <view class="qbdd mt10">
+        <navigator>
+            <span class="font_14 c3">下单时间</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.pay_time}}</span>
+        </navigator>
+    </view>
+    <view class="hongbao">
+        <image bindtap="settixing" src="/images/tixing.png" style="width:100rpx;height:100rpx;display:block;border:0"></image>
+    </view>
+</view>
+<modal noCancel bindconfirm="modalOk" catchtouchmove="true" class="modal" confirmText="关闭" hidden="{{modalFlag}}">
+    <view style="text-align:center;">扫描关注公众号方便接收凭证过期提醒</view>
+    <view style="text-align:center;">(点击二维码进行保存)</view>
+    <image bindtap="saveImgcheck" src="/images/ambm.jpg" style="width:150px;height:150px;margin-left:25%;"></image>
+</modal>

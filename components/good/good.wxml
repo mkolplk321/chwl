@@ -1,0 +1,8 @@
+<view class="good">
+    <image backgroundSize="cover" class="img" src="{{imageUrl}}"></image>
+    <view class="name">{{title}}</view>
+    <view class="price">
+        <view class="counterPrice">原价：￥{{counterPrice}}</view>
+        <view class="retailPrice">现价：￥{{retailPrice}}</view>
+    </view>
+</view>

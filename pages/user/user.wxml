@@ -1,0 +1,36 @@
+<view class="userinfo">
+    <open-data backgroundSize="cover" class="userinfo-avatar fl_l" type="userAvatarUrl"></open-data>
+    <view style="text-align:center;">{{userInfo.nickName}}
+        <button bindtap="applyQunzhu" class="sns-no-qunzhu" wx:if="{{userSns!='superagent'}}">[申请成为群主]</button>
+        <view class="sns-qunzhu" wx:if="{{userSns=='superagent'}}">
+            <i-icon color="gold" size="22" type="transaction_fill"></i-icon>群主
+        </view>
+    </view>
+</view>
+<view class="div">
+    <view class="div nav">
+        <view class="ul nav_list">
+            <view class="li nav_item nav_order" ptag="12478.1.1">
+                <view class="a" href="orders.html" ptag="12478.1.1">
+                    <view bindtap="myorder" class="div nav_item_hd">订单管理</view>
+                </view>
+            </view>
+            <view class="li nav_item nav_cheap">
+                <view class="div nav_item_hd">
+                    <navigator class="a" hoverClass="none" url="/pages/mymember/mymember"> 我的群成员 </navigator>
+                </view>
+            </view>
+            <view class="li nav_item nav_gold" ptag="12478.10.1">
+                <view bindtap="xscoupon" class="div nav_item_hd">
+                    <navigator class="a" hoverClass="none">我的钱包 </navigator>
+                </view>
+            </view>
+            <view class="li nav_item nav_cart" ptag="12478.10.1">
+                <view class="div nav_item_hd_coupons_sale">
+                    <view class="coupons_a div" hoverClass="none">在线客服 </view>
+                    <button openType="contact" size="30" style="display:block;line-height:4;z-index:9999999999;width:100%;height:40px;margin-left:6px;background-color:red;margin-top:-43px;opacity:-0.5;"></button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

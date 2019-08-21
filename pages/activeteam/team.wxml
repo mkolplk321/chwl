@@ -1,0 +1,129 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view style="padding-bottom:65px">
+    <view>
+        <image class="toutu_img" src="{{team_detail.image}}"></image>
+    </view>
+    <view class="title_content">
+        <text class="title">{{team_detail.title}}</text>
+        <view class="title_share">
+            <image src="/images/share.png" style="width:40rpx;height:40rpx;margin-left:5rpx;"></image>
+            <view class="share-text">分享</view>
+            <button class="share-btn" openType="share"></button>
+        </view>
+    </view>
+    <view class="price">
+        <text class="left nowprice">{{team_detail.referprice}}元</text>
+        <text class="left yuanprice">{{team_detail.sellerprice}}元</text>
+        <text class="right jiesheng">节省{{team_detail.sellerprice-team_detail.referprice}}元</text>
+    </view>
+    <view class="share" wx:if="{{is_show==1}}">
+        <view style="display:block;text-align:center">
+            <button bindtap="shareCircle" type="primary">下载推广海报</button>
+        </view>
+        <view style="display:block; width:100%;color:red;font-size:25rpx;text-align:center;margin-top:10rpx">好友成功购买后您可获得5元红包奖励
+      </view>
+    </view>
+    <view class="share" wx:elif="{{is_show==0}}">
+        <view style="display:block;text-align:center">
+            <button class="share" data-type="zfq" openType="share" size="mini" type="primary">转发到群</button>
+        </view>
+        <view style="display:block; width:100%;color:red;font-size:25rpx;text-align:center;margin-top:10rpx">转发成功以后购买本产品每张票立减0-5元
+      </view>
+    </view>
+    <view class="invite" wx:if="{{team_detail.agent_user_avatar!=null}}">
+        <view class="invitetext">邀请人:</view>
+        <image class="invite_image" src="{{team_detail.agent_user_avatar}}" style="width:100rpx;height:100rpx;"></image>
+    </view>
+    <view class="agree">
+        <icon size="16" type="success"></icon>
+        <text class="agree_title" style="color:#6bbd00">官方限时特惠</text>
+        <icon size="16" type="success"></icon>
+        <text class="agree_title" style="color:#6bbd00">比美团价更低</text>
+        <icon size="16" type="success"></icon>
+        <text class="agree_title" style="color:#6bbd00">平台独家产品</text>
+    </view>
+    <view style="margin-left:30rpx;margin-right:30rpx">
+        <view class="dd-padding">
+            <view class="notice-item">
+                <view class="notice-item-title">抢购开始时间</view>
+                <view class="notice-item-des">
+                    <text>{{team_detail.qiang_begin_time}}开始</text>
+                    <text>{{team_detail.qiang_end_time}}结束</text>
+                </view>
+            </view>
+            <view class="notice-item">
+                <view class="notice-item-title">有效期</view>
+                <view class="notice-item-des">
+                    <text>{{team_detail.expire_start_time}} 至{{team_detail.expire_time}}</text>
+                </view>
+            </view>
+            <view class="notice-item">
+                <view class="notice-item-title">平台声明</view>
+                <view class="notice-item-des">
+                    <text>1、本产品只限本人使用或转赠亲友，不允许在除我司平台外的其他网络平台进行销售，杜绝二次售卖，一经发现，景区方有权取消其验证码的使用资格，并不予以退款！</text>
+                    <text>2、购买购买此产品视为认同此声明以及活动规则。</text>
+                    <text>3、持短信或者二维码即可入园，无需预约！。</text>
+                </view>
+            </view>
+            <view class="notice-item">
+                <view class="notice-item-title">详情介绍</view>
+                <view class="notice-item-des">
+                    <template is="wxParse" data="{{wxParseData:detail.nodes}}"></template>
+                </view>
+            </view>
+            <view class="notice-item">
+                <view class="notice-item-title">特别提示</view>
+                <view class="notice-item-des">
+                    <view>1、本产品为特殊价格产品（低于门市挂牌价），不适用于网络购买商品七日无理由退货条款；关于退款的其他情形按照法律、法规相关规定处理。</view>
+                    <view>2、本产品为预售产品，不设其他指定日期使用，游园日期以实际为准。（如对日期有特别指定要求者不建议参与本次活动）</view>
+                    <view>3、可转赠 此票验证码在未核销前可转赠给亲友使用， 但不可以退款！一旦抢购成功，则默认同意此约定。 </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="countdown-div">
+        <view class="position-fixed">
+            <view class="position-relative cd-s3">
+                <view class="time">
+                    <view class="tips">
+                        <text style="color:white;margin-left:5px;font-weight:normal;">{{team_detail.info}}</text>
+                        <view class="c" style="color:white;margin-left:5px">
+                            <text id="day_show">{{day_show}}</text>天
+              <text id="hour_show">{{hour_show}}<text id="h"></text>
+                            </text> 小时
+              <text id="minute_show">
+                                <text></text>{{minute_show}}</text>分
+              <span id="second_show">{{second_show}}
+                <s></s>
+                            </span>秒
+            </view>
+                    </view>
+                </view>
+                <block wx:if="{{team_detail.state=='waiting'}}">
+                    <view wx:if="{{team_detail.tixing=='N'}}">
+                        <form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+                            <input hidden="true" name="focus" type="text" value="{{team_detail.focus}}"></input>
+                            <button class="btn remotion" formType="submit" style="border:0">设置提醒</button>
+                        </form>
+                    </view>
+                    <view wx:else>
+                        <text class="btn">敬请期待</text>
+                    </view>
+                </block>
+                <text bindtap="gotoBuy" class="btn" data-agent-id="{{team_detail.agentid}}" data-end-time="{{team_detail.expire_time}}" data-refer-price="{{team_detail.referprice}}" data-start-time="{{team_detail.expire_start_time}}" data-team-id="{{team_detail.id}}" data-team-name="{{team_detail.title}}" wx:elif="{{team_detail.state=='going'}}">立即抢购</text>
+                <text class="btn" wx:elif="{{team_detail.state=='end'}}">活动结束</text>
+                <text class="btn" wx:elif="{{team_detail.state=='sellout'}}">已被抢光</text>
+                <text class="btn" wx:else>活动结束</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view>
+    <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>
+<view style="position: fixed;height: 141rpx;rpx; width: 121rpx; right: 0px;top:30%;">
+    <image src="/images/lxkf1.png" style="width:120rpx;height:120rpx;"></image>
+    <button openType="contact" style="position: fixed;height:140rpx; width: 200rpx; right: -10px;top:30%;  opacity: 0;"></button>
+</view>

@@ -1,0 +1,102 @@
+.swiper-tab {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    line-height: 80rpx;
+    background: #fff;
+    height: 80rpx;
+}
+
+.swiper-tab-list {
+    font-size: 12px;
+    display: inline-block;
+    width: 50%;
+    color: #666;
+    margin: 0 auto;
+}
+
+.on {
+    color: #dd2727;
+    border-bottom: 5rpx solid #dd2727;
+}
+
+.swiper-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.nav {
+    line-height: 100rpx;
+    margin-left: 55rpx;
+    font-size: 24rpx;
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.navicat {
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.money {
+    color: red;
+}
+
+.withdrawlog {
+    margin-top: 10px;
+}
+
+.withdrawli {
+    font-size: 24rpx;
+    width: 100%;
+    height: 84rpx;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 0 0 0;
+    line-height: 84rpx;
+    margin-left: 10px;
+}
+
+.withdrawmoney {
+    float: left;
+}
+
+.withdrawtime {
+    float: right;
+    margin-right: 20px;
+}
+
+.key {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 25px 25px 25px 25px;
+    display: inline-block;
+    line-height: 40rpx;
+    background-color: #4bc6d8;
+    text-align: center;
+    margin-right: 100rpx;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.k {
+    font-size: 36rpx;
+}
+
+.right {
+    float: right;
+    width: 50%;
+}
+
+.left {
+    float: left;
+    width: 50%;
+}

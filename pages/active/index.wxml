@@ -1,0 +1,43 @@
+<import src="../../components/team/team.wxml"></import>
+<view class="top" style="background:#4bc6d8;">
+    <view bindtap="gotoCityList" class="top_l" id="city_name" style="text-align:left;margin-right:10px">
+        <text style="text-align:center;font-size:12px;">{{city.name}}</text>
+        <image src="../../images/indexxl.png"></image>
+    </view>
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" size="14" style="float:left;top:18rpx;" type="search"></icon>
+                <input bindinput="inputTyping" class="weui-search-bar__input" focus="{{inputShowed}}" placeholder="搜索" style="font-size:12px;" type="text" value="{{inputVal}}"></input>
+                <view bindtap="clearInput" class="weui-icon-clear" wx:if="{{inputVal.length>0}}">
+                    <icon size="14" type="clear"></icon>
+                </view>
+            </view>
+            <label bindtap="showInput" class="weui-search-bar__label" hidden="{{inputShowed}}" style="text-align:left;margin-left:10rpx;">
+                <icon class="weui-icon-search" size="14" type="search"></icon>
+                <view class="weui-search-bar__text" wx:if="{{inputVal.length>0}}">{{inputVal}}</view>
+                <view class="weui-search-bar__text" style="font-size:12px;" wx:if="{{inputVal.length==''}}">搜索</view>
+            </label>
+        </view>
+        <view bindtap="hideInput" class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" style="font-size:12px;">确定</view>
+    </view>
+</view>
+<view class="div clear-both"></view>
+<view class="for-margin-top"></view>
+<scroll-view bindscroll="scroll" bindscrolltolower="loadMore" class="list" lowerThreshold="800" scrollTop="{{scroll_Top}}" scrollY="true" style="height: {{windowHeight-80}}px; width: {{windowWidth}}px;">
+    <view class="div clear-both"></view>
+    <view class="for-margin-top"></view>
+    <view class="search_no" wx:if="{{!teams.length}}">
+        <view class="font_14">
+            <image class="scimg" src="../../images/search_no.png"></image>
+        </view>
+        <text>当前所在城市还没上传该类型产品，请敬请期待或选择其他城市。</text>
+    </view>
+    <template is="m-team_a" data="{{team:team,mode:1}}" wx:for="{{teams}}" wx:for-item="team"></template>
+</scroll-view>
+<view bindtap="goTop" class="i" id="go-top" style="{{goTopId}}"></view>
+<view>
+    <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>

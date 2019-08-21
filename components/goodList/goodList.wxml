@@ -1,0 +1,7 @@
+<view class="b" wx:if="{{goods.length>0}}">
+    <view class="item {{iindex%2==0?'':'item-b'}}" wx:for="{{goods}}" wx:for-index="iindex" wx:for-item="iitem" wx:key="id">
+        <navigator class="a" url="../team/team?id={{iitem.id}}">
+            <good counterPrice="{{iitem.sellerprice}}" imageUrl="{{iitem.image}}" retailPrice="{{iitem.price}}" title="{{iitem.title}}"></good>
+        </navigator>
+    </view>
+</view>
