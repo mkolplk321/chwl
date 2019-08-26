@@ -1,4 +1,4 @@
-var t = require("../../WxNotificationCenter/WxNotificationCenter.js"), a = getApp();
+var t = require("../../WxNotificationCenter/WxNotificationCenter.js"), app = getApp();
 
 Page({
     data: {
@@ -7,9 +7,12 @@ Page({
         hasMore: !0,
         hotList: [],
         teamList: [],
-        city: a.globalData.curCity
+        city: app.globalData.curCity,
+     
     },
     onLoad: function(a) {
+      console.log("123", wx.getStorageSync("isAuthorize"))
+      this.data.isAuthorize = wx.getStorageSync("isAuthorize")
         var e = this;
         wx.getSystemInfo({
             success: function(t) {
@@ -20,7 +23,8 @@ Page({
             }
         }), t.addNotification("curCityChanged", e.curCityChanged, e), e.curCityChanged();
     },
-    onReady: function() {},
+    onReady: function() {
+    },
     onShow: function() {},
     onHide: function() {},
     onUnload: function() {},
@@ -36,11 +40,21 @@ Page({
         }), this.loadTeamList());
     },
     onShareAppMessage: function() {},
+  /**
+* 授权回调
+*/
+  onLoadFun: function () {
+    this.loadTeamList();
+  },
+  close: function () {
+    if (this.data.isAuto) return;
+    this.setData({ iShidden: true });
+  },
     loadTeamList: function() {
         var t = this, a = t.data.page, e = t.data.size, i = this.data.city.id;
         wx.request({
           // url: "https://122.152.209.5:8080/qianggou/teams?cityid=" + i + "&page=" + a + "&size=" + e,
-          url: "https://www.dydtech.cn:8080/qianggou/teams?cityid=" + i + "&page=" + a + "&size=" + e,
+          url: "https://localhost:8080/qianggou/teams?cityid=" + i + "&page=" + a + "&size=" + e,
             success: function(e) {
                 if (wx.stopPullDownRefresh(), 1 == a) {
                     t.data.hotList.length = 0, t.data.teamList.length = 0;
@@ -60,7 +74,7 @@ Page({
                 }) : t.setData({
                     hasMore: !0
                 });
-            }
+            },
         });
     },
     selectCity: function() {

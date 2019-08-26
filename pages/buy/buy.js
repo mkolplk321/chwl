@@ -33,6 +33,7 @@ Page({
             xs_coupon_id: r,
             agent_id: this.data.agentid
         };
+        console.log(u)
         t.order.submit(u, function(t, a) {
             if ("success" === t) if (1 == a.data.code) {
                 if (e.globalData.debug) return void wx.redirectTo({

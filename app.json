@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/dashboard/authorize",
     "pages/dashboard/index",
     "pages/shouye/shouye",
     "pages/start/start",
