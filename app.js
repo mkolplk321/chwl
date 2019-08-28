@@ -89,7 +89,7 @@ App({
                 t.globalData.userId = l, t.globalData.mobile = n, t.globalData.userSns = s, 
                 console.log("&&&&&&&&&&",l,n,s)
                 // t.uploadavatar(t.globalData.userInfo.avatarUrl, t.globalData.userInfo.nickName, l),
-                  t.uploadavatar("aa", "aa", "aa")
+                  // t.uploadavatar("aa", "aa", "aa")
                   t.globalData.userId = l;
 
               } else "complete" == a && console.log( e);

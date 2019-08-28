@@ -5,9 +5,9 @@
     <view class="title_content">
         <text class="title">{{team_detail.title}}</text>
         <view class="title_share">
-            <image src="/images/share.png" style="width:40rpx;height:40rpx;margin-left:5rpx;"></image>
+            <image src="/images/share.png" style="width:40rpx;height:40rpx;margin-left:5rpx;" bindtap="showShareSheet"></image>
             <view  bindtap="showShareSheet" class="share-text">推广</view>
-            <button bindtap="showShareSheet" class="share-btn">推广</button>
+            
         </view>
     </view>
     <view class="price">

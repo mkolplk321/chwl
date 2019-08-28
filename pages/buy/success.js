@@ -2,7 +2,7 @@ getApp(), require("../../utils/api.js");
 
 Page({
     data: {
-        flag: !0,
+        flag: !1,
         orderid: null,
         team_id: null
     },

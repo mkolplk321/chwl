@@ -38,6 +38,8 @@ Page({
                 wx.setNavigationBarTitle({
                     title: i.title
                 });
+                i.agent_user_avatar ="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eresygxbLGnHtL8en5lj95FUs0wg7At6hElD2moVLkVu2KsQ5Z4RsichzUscAHNujzhcn4H7AH2ia6w/132";
+                
                 var n = t.data.detail;
                 if (n = n && "" != n ? (n = n.replace(new RegExp('"/static/kindeditor', "gm"), '"http://www.huayupiaowu.com/static/kindeditor')).replace(/\<img/gi, '<img class="rich-img"') : "", 
                 i.detail = n, e.setData({
@@ -78,6 +80,7 @@ Page({
     onLoad: function(a) {
         console.log("###options###"), console.log(a);
         var t = a.scene;
+        console.log("t:",t)
         t && (t = decodeURIComponent(t), console.log("scene=" + t));
         var e = a.id, i = a.agentid;
         if (t && 0 == t.indexOf("a#") && 3 == t.split("#").length) {
@@ -99,7 +102,6 @@ Page({
         }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan()) : a.doLogin().then(function(e) {
             t.setData({
                 userId: a.globalData.userId
-                // useId : "yudm"
             }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan();
         });
     },
@@ -119,9 +121,11 @@ Page({
     onPullDownRefresh: function() {},
     onReachBottom: function() {},
     onShareAppMessage: function(e) {
+        console.log(e)
         var i = e.target.dataset, n = this;
         if (console.log(this.data.wenan.zhuan_image), e.from, "zfq" == i.type) {
             s = "“" + a.globalData.userInfo.nickName + "”邀请您一起" + this.data.team_detail.originmoney + "元抢购" + this.data.team_detail.title;
+            console.log("@!",s)
             return n.data.wenan.zhuan_tishi && (s = n.data.wenan.zhuan_tishi), setTimeout(function() {
                 t.ticket.share(n.data.teamid, n.data.userId, function(a, t) {
                     if ("success" === a) {
@@ -160,6 +164,7 @@ Page({
             };
         }
         var s = "“" + a.globalData.userInfo.nickName + "”邀请您一起" + this.data.team_detail.originmoney + "元抢购" + this.data.team_detail.title;
+      console.log(s)
         return n.data.wenan.zhuan_tishi && (s = n.data.wenan.zhuan_tishi), {
             title: s,
             imageUrl: n.data.wenan.zhuan_image,

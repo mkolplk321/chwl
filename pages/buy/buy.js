@@ -33,12 +33,14 @@ Page({
             xs_coupon_id: r,
             agent_id: this.data.agentid
         };
-        console.log(u)
+        // console.log(u)
         t.order.submit(u, function(t, a) {
             if ("success" === t) if (1 == a.data.code) {
+              console.log("#@#@#@#@#@#", a.data)
                 if (e.globalData.debug) return void wx.redirectTo({
                     url: "../buy/success?orderid=" + a.data.orderid + "&team_id=" + i
                 });
+              
                 wx.requestPayment({
                     timeStamp: a.data.timeStamp,
                     nonceStr: a.data.nonceStr,
