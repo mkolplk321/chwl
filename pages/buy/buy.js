@@ -105,11 +105,13 @@ Page({
                     code: e.code
                 });
             }
-        }), t.user.getuserxs_coupon(e.globalData.userId, function(e, t) {
-            "success" === e ? (console.log(t.data), o.setData({
-                xs_coupon_list: t.data
-            })) : "fail" == e && console.log("获取优惠券失败");
-        }), o.setData({
+        }),
+        //  t.user.getuserxs_coupon(e.globalData.userId, function(e, t) {
+        //     "success" === e ? (console.log(t.data), o.setData({
+        //         xs_coupon_list: t.data
+        //     })) : "fail" == e && console.log("获取优惠券失败");
+        // }), 
+        o.setData({
             team_id: a.team_id,
             team_name: a.team_name,
             agentid: a.agentid,

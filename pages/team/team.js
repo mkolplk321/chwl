@@ -123,31 +123,22 @@ Page({
     onShareAppMessage: function(e) {
         console.log(e)
         var i = e.target.dataset, n = this;
-        if (console.log(this.data.wenan.zhuan_image), e.from, "zfq" == i.type) {
+        // if (console.log(this.data.wenan.zhuan_image), e.from, "zfq" == i.type) {
+          if (console.log(this.data.wenan.zhuan_image), e.from, true) {
             s = "“" + a.globalData.userInfo.nickName + "”邀请您一起" + this.data.team_detail.originmoney + "元抢购" + this.data.team_detail.title;
             console.log("@!",s)
             return n.data.wenan.zhuan_tishi && (s = n.data.wenan.zhuan_tishi), setTimeout(function() {
                 t.ticket.share(n.data.teamid, n.data.userId, function(a, t) {
                     if ("success" === a) {
                         var e = t.data;
-                        if (1 == e.status) wx.showModal({
+                        if ("2" == e.status) wx.showModal({
                             title: "成功立减",
                             content: "恭喜您成功立减" + e.money + "元",
                             showCancel: !1,
                             success: function(a) {
                                 a.confirm && n.loadTeamDetail(n.data.teamid);
                             }
-                        }); else {
-                            if (3 != e.status) return;
-                            wx.showModal({
-                                title: "成功立减",
-                                content: "您已享受立减" + e.money + "元",
-                                showCancel: !1,
-                                success: function(a) {
-                                    a.confirm && n.loadTeamDetail(n.data.teamid);
-                                }
-                            });
-                        }
+                        })
                         setTimeout(function() {
                             wx.hideLoading();
                         }, 2e3);
@@ -180,9 +171,9 @@ Page({
         });
     },
     loadShareWenan: function() {
-        var a = this;
-        t.ticket.marketWenan(this.data.teamid, this.data.userId, function(t, e) {
-            "success" == t && a.setData({
+        var that = this;
+        t.ticket.marketWenan(this.data.teamid, this.data.userId,a.globalData.userInfo.nickName, function(t, e) {
+          "success" == t && that.setData({
                 wenan: e.data
             });
         });

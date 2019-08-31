@@ -31,13 +31,13 @@ Page({
     onReachBottom: function() {},
     loadRecommendList: function(t) {
         var e = this;
-        wx.request({
-            url: "https://www.huayupiaowu.com/qianggou/api.php?do=getrecommendteams&id=" + t,
-            success: function(t) {
-                t.data.recommendteams && t.data.recommendteams.length > 0 && e.setData({
-                    recommendList: t.data.recommendteams
-                });
-            }
-        });
+        // wx.request({
+        //     url: "https://www.huayupiaowu.com/qianggou/api.php?do=getrecommendteams&id=" + t,
+        //     success: function(t) {
+        //         t.data.recommendteams && t.data.recommendteams.length > 0 && e.setData({
+        //             recommendList: t.data.recommendteams
+        //         });
+        //     }
+        // });
     }
 });

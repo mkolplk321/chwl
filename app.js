@@ -33,7 +33,7 @@ App({
       var o = a.query.fa_userid,
         e = a.query.fa_orderid;
       "" != o ? (t.globalData.fa_userid = o, t.globalData.fa_orderid = e) : t.globalData.fa_userid = null;
-    }
+    };
     wx.getSystemInfo({
       success: function(a) {
         t.systemInfo = a;
@@ -54,7 +54,8 @@ App({
     var t = this;
     return new Promise(function(o, e) {
 
-      t.globalData.userId ? o() : wx.login({
+      // t.globalData.userId ? o() : 
+      wx.login({
         success: function(e) {
           if (e.code) {
             var l = e.code;

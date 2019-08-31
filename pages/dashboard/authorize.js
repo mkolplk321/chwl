@@ -21,8 +21,9 @@ Page({
   },
   setUserInfo(e) {
     // wx.showLoading({ title: '正在登录中' });
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     app.doLogin();
-    console.log("~~~~~~~~~~~~")
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     wx.switchTab({
       url: 'index',
     })

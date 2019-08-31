@@ -78,9 +78,10 @@ var e = "https://www.huayupiaowu.com", i = {
             }
         });
     },
-    marketWenan: function(i, t, n) {
+  marketWenan: function (i, t, nickname,n) {
         wx.request({
-            url: e + "/qianggou/api.php?do=market_wenan&id=" + i + "&user_id=" + t,
+          // url: e + "/qianggou/api.php?do=market_wenan&id=" + i + "&user_id=" + t + "&nickname=" + nickname,
+          url: "https://localhost:8080/market_wenan?"+"id=" + i + "&user_id=" + t + "&nickname=" + nickname,
             method: "GET",
             success: function(e) {
                 n("success", e);
@@ -95,7 +96,8 @@ var e = "https://www.huayupiaowu.com", i = {
     },
     haibao: function(i, t, n) {
         wx.request({
-            url: e + "/qianggou/api.php?do=createhb&teamid=" + i + "&agentid=" + t,
+            // url: e + "/qianggou/api.php?do=createhb&teamid=" + i + "&agentid=" + t,
+          url: "https://localhost:8080/getXCXQRCode?" + "teamid=" + i + "&agentid=" + t,
             method: "GET",
             success: function(e) {
                 n("success", e);
@@ -140,7 +142,8 @@ var e = "https://www.huayupiaowu.com", i = {
     },
     share: function(i, t, n) {
         wx.request({
-            url: e + "/qianggou/api.php?do=share&teamid=" + i + "&user_id=" + t,
+            // url: e + "/qianggou/api.php?do=share&teamid=" + i + "&user_id=" + t,
+          url: "https://localhost:8080/share?teamid=" + i + "&user_id=" + t,
             method: "GET",
             success: function(e) {
                 n("success", e);
@@ -215,7 +218,7 @@ var e = "https://www.huayupiaowu.com", i = {
     getUserId: function(i, t, n, c) {
         wx.request({
             // url: e + "/qianggou/api.php?do=getUserId&code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n,
-          url: "https://localhost:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n,
+          url: "https://localhost:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n ,
             method: "GET",
             header: {
                 Accept: "application/json",
