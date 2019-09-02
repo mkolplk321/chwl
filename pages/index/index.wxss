@@ -1,6 +1,6 @@
 @import "../../components/team/team.wxss";
 
-@import "../../__wuBaseWxss__/2.wxss";
+
 
 .weui-search-bar {
     margin-right: 10px;

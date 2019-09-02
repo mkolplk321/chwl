@@ -1,6 +1,5 @@
 @import "../../wxParse/wxParse.wxss";
 
-@import "../../__wuBaseWxss__/0.wxss";
 
 .toutu_img {
     width: 100%;

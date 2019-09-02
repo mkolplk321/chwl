@@ -1,10 +1,10 @@
-var a = getApp(), t = require("../../utils/api.js");
+var app = getApp(), t = require("../../utils/api.js");
 
 require("../../utils/util.js"), wx.getLogManager();
 
 Page({
     data: {
-        userId: a.globalData.userId,
+        userId: app.globalData.userId,
         scene: null,
         teamid: 0,
         agentid: null,
@@ -32,6 +32,12 @@ Page({
     },
     loadTeamDetail: function(a) {
         var e = this;
+      if (!app.globalData.isAuthorize) return void wx.redirectTo({
+        url: "../dashboard/authorize"
+      });
+      if (this.data.userId){
+        app.doLogin()
+      }
         t.ticket.teamdetail(a, this.data.userId, this.data.agentid, function(a, t) {
             if ("success" === a) {
                 var i = t.data;
@@ -78,6 +84,7 @@ Page({
         });
     },
     onLoad: function(a) {
+
         console.log("###options###"), console.log(a);
         var t = a.scene;
         console.log("t:",t)
@@ -97,8 +104,8 @@ Page({
     },
     onReady: function() {
         var t = this;
-        a.globalData.userId ? (t.setData({
-            userId: a.globalData.userId
+        app.globalData.userId ? (t.setData({
+            userId: app.globalData.userId
         }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan()) : a.doLogin().then(function(e) {
             t.setData({
                 userId: a.globalData.userId
@@ -106,6 +113,7 @@ Page({
         });
     },
     onLaunch: function(a, t, e, i) {
+      console.log("12345678")
         wx.showShareMenu({
             withShareTicket: !0
         });
@@ -121,11 +129,14 @@ Page({
     onPullDownRefresh: function() {},
     onReachBottom: function() {},
     onShareAppMessage: function(e) {
-        console.log(e)
+
+        console.log(e);
+      var nickname =  "老兄弟";
         var i = e.target.dataset, n = this;
         // if (console.log(this.data.wenan.zhuan_image), e.from, "zfq" == i.type) {
           if (console.log(this.data.wenan.zhuan_image), e.from, true) {
-            s = "“" + a.globalData.userInfo.nickName + "”邀请您一起" + this.data.team_detail.originmoney + "元抢购" + this.data.team_detail.title;
+            
+            s = "“" + nickname + "”邀请您一起" + this.data.team_detail.originmoney + "元抢购" + this.data.team_detail.title;
             console.log("@!",s)
             return n.data.wenan.zhuan_tishi && (s = n.data.wenan.zhuan_tishi), setTimeout(function() {
                 t.ticket.share(n.data.teamid, n.data.userId, function(a, t) {
@@ -154,7 +165,7 @@ Page({
                 path: "/pages/team/team?id=" + n.data.teamid + "&agentid=" + n.data.userId
             };
         }
-        var s = "“" + a.globalData.userInfo.nickName + "”邀请您一起" + this.data.team_detail.originmoney + "元抢购" + this.data.team_detail.title;
+      var s = "“" + nickname + "”邀请您一起" + this.data.team_detail.originmoney + "元抢购" + this.data.team_detail.title;
       console.log(s)
         return n.data.wenan.zhuan_tishi && (s = n.data.wenan.zhuan_tishi), {
             title: s,
@@ -172,7 +183,8 @@ Page({
     },
     loadShareWenan: function() {
         var that = this;
-        t.ticket.marketWenan(this.data.teamid, this.data.userId,a.globalData.userInfo.nickName, function(t, e) {
+      var nickName = app.globalData.userInfo.nickName ? app.globalData.userInfo.nickName : "老兄弟";
+      t.ticket.marketWenan(this.data.teamid, this.data.userId, nickName, function(t, e) {
           "success" == t && that.setData({
                 wenan: e.data
             });
@@ -219,7 +231,10 @@ Page({
                         }
                     });
                 },
-                fail: function(a) {},
+                fail: function(a) {
+                  console.log("下载海报失败")
+
+                },
                 complete: function(a) {
                     wx.hideLoading();
                 }

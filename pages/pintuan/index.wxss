@@ -1,6 +1,5 @@
 @import "../../components/team/team.wxss";
 
-@import "../../__wuBaseWxss__/2.wxss";
 
 .pintuan {
     width: 100%;

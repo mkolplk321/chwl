@@ -63,9 +63,11 @@ App({
               success: function(a) {
                 console.log("authsettings:", a);
                 if (!a.authSetting['scope.userInfo']) {
-                  wx.setStorageSync("isAuthorize", false)
+                  wx.setStorageSync("isAuthorize", false);
+                  t.globalData.isAuthorize = false;
                 } else {
-                  wx.setStorageSync("isAuthorize", true)
+                  wx.setStorageSync("isAuthorize", true);
+                  t.globalData.isAuthorize = true;
                 }
                 console.log(t.globalData.isAuthorize)
               }
@@ -118,7 +120,7 @@ App({
       a.globalData.cityData ? t(a.globalData.cityData) : wx.request({
         // url: "https://www.huayupiaowu.com/qianggou/api.php?do=citys",
         // url: "https://122.152.209.5:8080/districts",
-        url: "https://localhost:8080/districts",
+        url: "https://www.dydtech.cn:8080/districts",
         success: function(o) {
           a.globalData.cityData = o.data, wx.setStorage({
             key: "city-list-data",
