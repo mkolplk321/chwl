@@ -2,13 +2,13 @@ getApp(), require("../../utils/api.js");
 
 Page({
     data: {
-        flag: !1,
+        flag: !0,
         orderid: null,
         team_id: null
     },
     onLoad: function(t) {
         this.setData({
-            orderid: t.orderId,
+            orderid: t.orderid,
             team_id: t.team_id
         }), this.loadRecommendList(this.data.team_id);
     },

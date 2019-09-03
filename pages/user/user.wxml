@@ -1,10 +1,6 @@
 <view class="userinfo">
     <open-data backgroundSize="cover" class="userinfo-avatar fl_l" type="userAvatarUrl"></open-data>
     <view style="text-align:center;">{{userInfo.nickName}}
-        <button bindtap="applyQunzhu" class="sns-no-qunzhu" wx:if="{{userSns!='superagent'}}">[申请成为群主]</button>
-        <view class="sns-qunzhu" wx:if="{{userSns=='superagent'}}">
-            <i-icon color="gold" size="22" type="transaction_fill"></i-icon>群主
-        </view>
     </view>
 </view>
 <view class="div">
@@ -15,11 +11,7 @@
                     <view bindtap="myorder" class="div nav_item_hd">订单管理</view>
                 </view>
             </view>
-            <view class="li nav_item nav_cheap">
-                <view class="div nav_item_hd">
-                    <navigator class="a" hoverClass="none" url="/pages/mymember/mymember"> 我的群成员 </navigator>
-                </view>
-            </view>
+           
             <view class="li nav_item nav_gold" ptag="12478.10.1">
                 <view bindtap="xscoupon" class="div nav_item_hd">
                     <navigator class="a" hoverClass="none">我的钱包 </navigator>

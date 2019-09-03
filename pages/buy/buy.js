@@ -31,7 +31,10 @@ Page({
             team_id: i,
             quantity: n,
             xs_coupon_id: r,
-            agent_id: this.data.agentid
+            agent_id: this.data.agentid,
+            referPrice: this.data.referprice,
+            summoney : this.data.summoney
+
         };
         // console.log(u)
         t.order.submit(u, function(t, a) {

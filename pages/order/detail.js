@@ -147,16 +147,17 @@ Page({
     },
     canvasToTempImage: function() {
         var t = this;
+        
         wx.canvasToTempFilePath({
             canvasId: "mycanvas",
             success: function(e) {
                 var o = e.tempFilePath;
-                console.log(1), console.log(o), console.log(2), t.setData({
+                console.log("(((((((((((((((((((((((("), console.log(o), console.log(2), t.setData({
                     imagePath: o
                 });
             },
             fail: function(t) {
-                console.log(t);
+                console.log("(((((((",t);
             }
         });
     },

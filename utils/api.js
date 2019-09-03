@@ -33,7 +33,7 @@ var e = "https://www.huayupiaowu.com", i = {
         wx.request({
             // url: e + "/qianggou/api.php?do=group",
           // url: "https://122.152.209.5:8080" + "/groups",
-          url: "https://www.dydtech.cn:8080" + "/groups",
+          url: "https://localhost:8080" + "/groups",
             method: "GET",
             success: function(e) {
                 i("success", e);
@@ -65,7 +65,7 @@ var e = "https://www.huayupiaowu.com", i = {
         wx.request({
             // url: e + "/qianggou/api.php?do=detail&id=" + i + "&user_id=" + t + "&agentid=" + n,
           //  url: "https://122.152.209.5:8080" + "/qianggou/teamsdetail?id=" + i + "&user_id=" + t + "&agentid=" + n,
-          url: "https://www.dydtech.cn:8080" + "/qianggou/teamsdetail?id=" + i + "&user_id=" + t + "&agentid=" + n,
+          url: "https://localhost:8080" + "/qianggou/teamsdetail?id=" + i + "&user_id=" + t + "&agentid=" + n,
             method: "GET",
             success: function(e) {
                 c("success", e);
@@ -81,7 +81,7 @@ var e = "https://www.huayupiaowu.com", i = {
   marketWenan: function (i, t, nickname,n) {
         wx.request({
           // url: e + "/qianggou/api.php?do=market_wenan&id=" + i + "&user_id=" + t + "&nickname=" + nickname,
-          url: "https://www.dydtech.cn:8080/market_wenan?"+"id=" + i + "&user_id=" + t + "&nickname=" + nickname,
+          url: "https://localhost:8080/market_wenan?"+"id=" + i + "&user_id=" + t + "&nickname=" + nickname,
             method: "GET",
             success: function(e) {
                 n("success", e);
@@ -97,7 +97,7 @@ var e = "https://www.huayupiaowu.com", i = {
     haibao: function(i, t, n) {
         wx.request({
             // url: e + "/qianggou/api.php?do=createhb&teamid=" + i + "&agentid=" + t,
-          url: "https://www.dydtech.cn:8080/getXCXQRCode?" + "teamid=" + i + "&agentid=" + t,
+          url: "https://localhost:8080/getXCXQRCode?" + "teamid=" + i + "&agentid=" + t,
             method: "GET",
             success: function(e) {
                 n("success", e);
@@ -143,7 +143,7 @@ var e = "https://www.huayupiaowu.com", i = {
     share: function(i, t, n) {
         wx.request({
             // url: e + "/qianggou/api.php?do=share&teamid=" + i + "&user_id=" + t,
-          url: "https://www.dydtech.cn:8080/share?teamid=" + i + "&user_id=" + t,
+          url: "https://localhost:8080/share?teamid=" + i + "&user_id=" + t,
             method: "GET",
             success: function(e) {
                 n("success", e);
@@ -218,7 +218,7 @@ var e = "https://www.huayupiaowu.com", i = {
     getUserId: function(i, t, n, c) {
         wx.request({
             // url: e + "/qianggou/api.php?do=getUserId&code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n,
-          url: "https://www.dydtech.cn:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n ,
+          url: "https://localhost:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n ,
             method: "GET",
             header: {
                 Accept: "application/json",
@@ -231,7 +231,7 @@ var e = "https://www.huayupiaowu.com", i = {
                 c("fail", e);
             },
             complete: function(o) {
-              c("complete", "https://www.dydtech.cn:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n);
+              c("complete", "https://localhost:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n);
             }
         });
     },
@@ -453,7 +453,7 @@ var e = "https://www.huayupiaowu.com", i = {
     submit: function(i, t) {
         wx.request({
             // url: e + "/qianggou/api.php?do=submitOrder",
-            url: "https://www.dydtech.cn:8080/submitOrder",
+            url: "https://localhost:8080/submitOrder",
             method: "POST",
             data: i,
             header: {
@@ -510,7 +510,8 @@ var e = "https://www.huayupiaowu.com", i = {
     },
     orderList: function(i, t) {
         wx.request({
-            url: e + "/qianggou/api.php?do=myorder&user_id=" + i.userid + "&page=" + i.page + "&size=10&current=" + i.current,
+            // url: e + "/qianggou/api.php?do=myorder&user_id=" + i.userid + "&page=" + i.page + "&size=10&current=" + i.current,
+            url: "https://localhost:8080" + "/myorder?user_id=" + i.userid + "&page=" + i.page + "&size=10&current=" + i.current,
             method: "GET",
             header: {
                 Accept: "application/json",
@@ -530,7 +531,7 @@ var e = "https://www.huayupiaowu.com", i = {
     },
     orderDetail: function(i, t) {
         wx.request({
-            url: e + "/qianggou/api.php?do=orderDetail&order_id=" + i,
+            url: "https://localhost:8080" + "/orderDetail?orderid=" + i,
             method: "GET",
             header: {
                 Accept: "application/json",

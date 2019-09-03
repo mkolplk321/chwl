@@ -1,6 +1,6 @@
 <view class="page">
     <view class="userinfo">
-        <canvas canvasId="mycanvas" class="userinfo-avatar fl_l"></canvas>
+        <image  src="{{order.image}}" style="width:170px;height:170px;display:block;border:0"></image>
         <text class="fl_l" style="margin-top:15rpx;margin-bottom:30rpx">{{order.code}}</text>
     </view>
     <navigator class="qbdd mt10">
@@ -40,13 +40,13 @@
     <view class="qbdd mt10">
         <navigator>
             <span class="font_14 c3">产品价格</span>
-            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.price}}</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.price}}元</span>
         </navigator>
     </view>
     <view class="qbdd mt10">
         <navigator>
             <span class="font_14 c3">订单总价</span>
-            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.money}}</span>
+            <span class="fl_r c9 font_12 l_h20" hoverClass="none"> {{order.money}}元</span>
         </navigator>
     </view>
     <view class="qbdd mt10">
