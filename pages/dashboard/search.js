@@ -64,7 +64,7 @@ Page({
     getTeamList: function() {
         var t = this, e = t.data.page, r = t.data.size, a = t.data.keyword, o = wx.getStorageSync("current-city").id;
         wx.request({
-            url: "https://www.huayupiaowu.com/qianggou/api.php?do=teams&cityid=" + o + "&page=" + e + "&size=" + r + "&inputval=" + a,
+            url: "https://www.dydtech.cn:8080/qianggou/teams?cityid=" + o + "&page=" + e + "&size=" + r + "&inputval=" + a,
             success: function(r) {
                 wx.stopPullDownRefresh(), 1 == e && (t.data.goodsList.length = 0);
                 for (var a = 0; a < r.data.length; a++) t.data.goodsList.push(r.data[a]);

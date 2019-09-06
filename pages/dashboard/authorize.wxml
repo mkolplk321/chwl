@@ -4,6 +4,7 @@
    <view class='tip'>请授权头像等信息，以便为您提供更好的服务</view>
    <view class='bottom flex'>
       <button class='item grant on'  type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="setUserInfo">去授权</button>
+      <button  lang="zh_CN" bindtap="reject">拒绝</button>
    </view>
 </view>
 <view class='mask' hidden='{{isAuthorize}}' catchtouchmove="true" bindtap='open'></view>

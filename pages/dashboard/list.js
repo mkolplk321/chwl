@@ -55,7 +55,8 @@ Page({
     loadTeamList: function(t) {
         var e = wx.getStorageSync("current-city"), a = this;
         wx.request({
-            url: "https://www.huayupiaowu.com/qianggou/api.php?do=teams&cityid=" + e.id + "&group_id=" + t,
+            // url: "https://www.huayupiaowu.com/qianggou/api.php?do=teams&cityid=" + e.id + "&group_id=" + t,
+            url: "https://www.dydtech.cn:8080/qianggou/teams?cityid=" + e.id + "&group_id=" + t,
             success: function(t) {
                 a.setData({
                     teamList: t.data

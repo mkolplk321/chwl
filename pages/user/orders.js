@@ -88,7 +88,12 @@ t(e, "orderdetail", function(t) {
     wx.navigateTo({
         url: "../order/detail?orderId=" + e.id
     });
-}), t(e, "gotopintuandetail", function(t) {
+  }), t(e, "teamdetail", function (t) {
+    var e = t.currentTarget.dataset;
+    wx.navigateTo({
+      url: "../team/team?id=" + e.id
+    });
+  }), t(e, "gotopintuandetail", function(t) {
     var e = t.currentTarget.dataset;
     wx.navigateTo({
         url: "../pintuan/tuandetail?tuan_id=" + e.id

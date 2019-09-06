@@ -1,3 +1,4 @@
+<import src="../../wxParse/wxParse.wxml"></import>
 <view style="padding-bottom:65px">
     <view>
         <image class="toutu_img" src="{{team_detail.image}}"></image>
@@ -58,7 +59,7 @@
                     <text>{{team_detail.expire_start_time}} 至{{team_detail.expire_time}}</text>
                 </view>
             </view>
-            <view class="notice-item">
+            <!-- <view class="notice-item">
                 <view class="notice-item-title">群二维码</view>
                 <view class="notice-item-des">
                     <view class="kefu" wx:if="{{team_detail.qun_qrcode}}">
@@ -66,7 +67,7 @@
                         <image src="{{team_detail.qun_qrcode}}"></image>
                     </view>
                 </view>
-            </view>
+            </view> -->
             <view class="notice-item">
                 <view class="notice-item-title">平台声明</view>
                 <view class="notice-item-des">
@@ -78,7 +79,9 @@
             <view class="notice-item">
                 <view class="notice-item-title">详情介绍</view>
                 <view class="notice-item-des">
-                    <rich-text class="team_detail" nodes="{{team_detail.detail}}"></rich-text>
+                    <!-- <rich-text class="team_detail" nodes="{{team_detail.detail}}"></rich-text> -->
+                    <!-- <web-view src="https://mp.weixin.qq.com/s/ONPTDfxNuhFxU6x4pi8hCQ" /> -->
+            <template is="wxParse" data="{{wxParseData:detail.nodes}}"></template>
                 </view>
             </view>
             <view class="notice-item">

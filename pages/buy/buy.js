@@ -52,7 +52,7 @@ Page({
                     paySign: a.data.paySign,
                     success: function(e) {
                         console.log("###success"), console.log(e), wx.redirectTo({
-                            url: "../buy/success?orderId=" + a.data.orderid + "&team_id=" + i
+                            url: "../buy/success?orderid=" + a.data.orderid + "&team_id=" + i
                         });
                     },
                     fail: function(e) {

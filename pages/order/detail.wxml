@@ -62,5 +62,5 @@
 <modal noCancel bindconfirm="modalOk" catchtouchmove="true" class="modal" confirmText="关闭" hidden="{{modalFlag}}">
     <view style="text-align:center;">扫描关注公众号方便接收凭证过期提醒</view>
     <view style="text-align:center;">(点击二维码进行保存)</view>
-    <image bindtap="saveImgcheck" src="/images/ambm.jpg" style="width:150px;height:150px;margin-left:25%;"></image>
+    <image bindtap="saveImgcheck" src="/images/chwl.jpg" style="width:150px;height:150px;margin-left:25%;"></image>
 </modal>

@@ -7,6 +7,7 @@ Page({
         team_id: null
     },
     onLoad: function(t) {
+        console.log("successdetail",t)
         this.setData({
             orderid: t.orderid,
             team_id: t.team_id

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/dashboard/authorize",
     "pages/dashboard/index",
+    "pages/dashboard/authorize",
     "pages/shouye/shouye",
     "pages/start/start",
     "pages/city/pintuancity",

@@ -29,6 +29,14 @@ Page({
     })
     console.log("~~~~~~~~~~~~")
   },
+  reject(e) {
+    // wx.showLoading({ title: '正在登录中' });
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    wx.switchTab({
+      url: 'index',
+    })
+    console.log("~~~~~~~~~~~~")
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

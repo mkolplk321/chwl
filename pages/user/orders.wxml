@@ -41,6 +41,7 @@
                     <view bindtap="gotopintuandetail" class="font_12 red fl_r mr_5" data-id="{{item.tuan_id}}" wx:if="{{item.tuan_status==1}}">邀请好友</view>
                     <view bindtap="gotobuy" class="font_12 red fl_r mr_5" data-id="{{item.team_id}}" wx:if="{{item.tuan_status==3}}">再次购买</view>
                     <view bindtap="orderdetail" class="font_12 red fl_r mr_5" data-id="{{item.id}}" wx:if="{{item.tuan_status==2}}">查看订单</view>
+                    <view bindtap="teamdetail" class="font_12 red fl_r mr_5" data-id="{{item.teamid}}" wx:if="{{item.tuan_status==2}}">商品详情</view>
                 </block>
                 <block wx:if="{{item.from=='xiaochengxuhd'}}">
                     <block wx:if="{{item.rstate=='normal'}}">
