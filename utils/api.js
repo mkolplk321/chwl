@@ -48,7 +48,8 @@ var e = "https://www.huayupiaowu.com", i = {
     },
     myfxcoupon: function(i, t) {
         wx.request({
-            url: e + "/qianggou/api.php?do=myfxcoupon&user_id=" + i.userid + "&page=" + i.page + "&size=10",
+            // url: e + "/qianggou/api.php?do=myfxcoupon&user_id=" + i.userid + "&page=" + i.page + "&size=10",
+          url: "https://www.dydtech.cn:8080/myfxcoupon?user_id=" + i.userid + "&page=" + i.page + "&size=10",
             method: "GET",
             success: function(e) {
                 t("success", e);
@@ -215,10 +216,10 @@ var e = "https://www.huayupiaowu.com", i = {
         });
     }
 }, n = {
-    getUserId: function(i, t, n, c) {
+    getUserId: function(i, t, n,avtar, c) {
         wx.request({
             // url: e + "/qianggou/api.php?do=getUserId&code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n,
-          url: "https://www.dydtech.cn:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n ,
+          url: "https://www.dydtech.cn:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n +"&avtar_url="+avtar,
             method: "GET",
             header: {
                 Accept: "application/json",

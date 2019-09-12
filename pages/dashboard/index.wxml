@@ -23,6 +23,7 @@
                                     <view style="clear:both"></view>
                                 </view>
                                 <view class="beginTime">开抢时间：{{item.qiang_begin_time}}</view>
+                                <view class="retailPrice">推广赚佣金： {{item.service_fee}}元</view>
                             </view>
                         </view>
                     </view>

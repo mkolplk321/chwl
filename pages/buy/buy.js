@@ -33,10 +33,11 @@ Page({
             xs_coupon_id: r,
             agent_id: this.data.agentid,
             referPrice: this.data.referprice,
-            summoney : this.data.summoney
+            summoney : this.data.summoney,
+            hongbao_flag: this.data.hongbao_flag
 
         };
-        // console.log(u)
+         console.log("submit_info",u);
         t.order.submit(u, function(t, a) {
             if ("success" === t) if (1 == a.data.code) {
               console.log("#@#@#@#@#@#", a.data)
@@ -51,7 +52,11 @@ Page({
                     signType: a.data.signType,
                     paySign: a.data.paySign,
                     success: function(e) {
-                        console.log("###success"), console.log(e), wx.redirectTo({
+                        console.log("###success"), console.log(e),
+                        wx.request({
+                          url: 'https://www.dydtech.cn:8080/charge?orderid=' + a.data.orderid,
+                        })
+                         wx.redirectTo({
                             url: "../buy/success?orderid=" + a.data.orderid + "&team_id=" + i
                         });
                     },
@@ -123,7 +128,8 @@ Page({
             referprice: a.referprice,
             number: 1,
             youhui: "满五张立减5元",
-            summoney: a.referprice
+            summoney: a.referprice,
+            hongbao_flag :a.hongbao_flag
         });
     },
     onReady: function() {},

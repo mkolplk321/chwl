@@ -16,6 +16,7 @@ Page({
     second_show: 0,
     hidden: !1,
     wenan: {},
+    hongbao_flag :false,
     haibao: {
       visible: !1,
       image: ""
@@ -31,11 +32,9 @@ Page({
     ]
   },
   loadTeamDetail: function (a) {
+    console.log("load",a);
     var e = this;
-    if (!app.globalData.isAuthorize) return void wx.redirectTo({
-      url: "../dashboard/authorize"
-    });
-    if (this.data.userId) {
+    if (!this.data.userId) {
       app.doLogin()
     }
     t.ticket.teamdetail(a, this.data.userId, this.data.agentid, function (a, t) {
@@ -44,7 +43,7 @@ Page({
         wx.setNavigationBarTitle({
           title: i.title
         });
-        i.agent_user_avatar = "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eresygxbLGnHtL8en5lj95FUs0wg7At6hElD2moVLkVu2KsQ5Z4RsichzUscAHNujzhcn4H7AH2ia6w/132";
+        // i.agent_user_avatar = "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eresygxbLGnHtL8en5lj95FUs0wg7At6hElD2moVLkVu2KsQ5Z4RsichzUscAHNujzhcn4H7AH2ia6w/132";
 
         var n = t.data.detail;
         // if (n = n && "" != n ? (n = n.replace(new RegExp('"/static/kindeditor', "gm"), '"http://www.huayupiaowu.com/static/kindeditor')).replace(/\<img/gi, '<img class="rich-img"') : "", 
@@ -75,7 +74,7 @@ Page({
   gotoBuy: function (a) {
     var t = a.currentTarget.dataset.teamId, e = a.currentTarget.dataset.teamName, i = a.currentTarget.dataset.startTime, n = a.currentTarget.dataset.endTime, s = a.currentTarget.dataset.referPrice, o = a.currentTarget.dataset.permaxNumber;
     wx.navigateTo({
-      url: "/pages/buy/buy?team_id=" + t + "&team_name=" + e + "&agentid=" + this.data.agentid + "&start_time=" + i + "&end_time=" + n + "&referprice=" + s + "&permax_number=" + o
+      url: "/pages/buy/buy?team_id=" + t + "&team_name=" + e + "&agentid=" + this.data.agentid + "&start_time=" + i + "&end_time=" + n + "&referprice=" + s + "&permax_number=" + o +"&hongbao_flag="+this.data.hongbao_flag
     });
   },
   guanzhu: function (a) {
@@ -88,36 +87,51 @@ Page({
     });
   },
   onLoad: function (a) {
-
+    a= {"scene" : "149786%2616"}
     console.log("###options###"), console.log(a);
     var t = a.scene;
+    var strs = null;
+    var pkid = null;
+    var that = this;
     console.log("t:", t)
-    t && (t = decodeURIComponent(t), console.log("scene=" + t));
-    var e = a.id, i = a.agentid;
-    if (t && 0 == t.indexOf("a#") && 3 == t.split("#").length) {
-      var n = t.split("#");
-      e = n[1], i = n[2];
+    t && (t = decodeURIComponent(t),console.log("ttt",t), strs = t.split('&'),a.id = strs[0],pkid=strs[1],console.log("++++++++++++",a.id,pkid));
+    if(pkid){
+      this.setData({
+        hongbao_flag: true
+      })
+      wx.request({
+        url: 'https://www.dydtech.cn:8080/getUserIDByOrder?pkid='+pkid,
+        success: function (o) {
+          a.agentid = o.data.userId;
+          var i = a.agentid;
+          i && that.setData({
+            agentid: i
+          }), 
+          console.log("agentid",o);
+        }
+      })
     }
-    t && this.setData({
-      scene: t
-    }), i && this.setData({
-      agentid: i
-    }), this.setData({
+   
+   var e = a.id;this.setData({
       teamid: e
     });
   },
   onReady: function () {
+    
+        if (!app.globalData.isAuthorize) return void wx.redirectTo({
+      url: "../dashboard/authorize?teamid="+this.data.teamid+"&agentid="+this.data.agentid
+    });
     var t = this;
     app.globalData.userId ? (t.setData({
       userId: app.globalData.userId
-    }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan()) : a.doLogin().then(function (e) {
+    }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan()) : app.doLogin().then(function (e) {
       t.setData({
-        userId: a.globalData.userId
+        userId: app.globalData.userId
       }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan();
     });
   },
   onLaunch: function (a, t, e, i) {
-    console.log("12345678")
+    console.log("@@@!", a)
     wx.showShareMenu({
       withShareTicket: !0
     });
@@ -187,7 +201,7 @@ Page({
   },
   loadShareWenan: function () {
     var that = this;
-    var nickName = app.globalData.userInfo.nickName ? app.globalData.userInfo.nickName : "老兄弟";
+    var nickName = app.globalData.userInfo? app.globalData.userInfo.nickName : "老兄弟";
     t.ticket.marketWenan(this.data.teamid, this.data.userId, nickName, function (t, e) {
       "success" == t && that.setData({
         wenan: e.data

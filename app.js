@@ -4,7 +4,7 @@ require("WxNotificationCenter/WxNotificationCenter.js");
 
 App({
   globalData: {
-    debug: !0,
+    debug: !1,
     userInfo: null,
     userId: null,
     mobile: null,
@@ -83,14 +83,15 @@ App({
             });
             var n = t.globalData.fa_userid,
               s = t.globalData.fa_orderid;
-            a.user.getUserId(l, n, s, function(a, e) {
+            var avtarUrl = t.globalData.userInfo ? t.globalData.userInfo.avatarUrl : "";
+            a.user.getUserId(l, n, s, avtarUrl ,function(a, e) {
               if ("success" == a) {
                 var l = e.data.user_id,
                   n = e.data.mobile,
                   s = e.data.sns;
                 
                 t.globalData.userId = l, t.globalData.mobile = n, t.globalData.userSns = s, 
-                console.log("&&&&&&&&&&",l,n,s)
+                  console.log("&&&&&&&&&&", l, n, s, avtarUrl)
                 // t.uploadavatar(t.globalData.userInfo.avatarUrl, t.globalData.userInfo.nickName, l),
                   // t.uploadavatar("aa", "aa", "aa")
                   t.globalData.userId = l;
