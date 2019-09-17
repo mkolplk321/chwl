@@ -51,6 +51,7 @@ App({
     }), this.doLogin();
   },
   doLogin: function() {
+    console.log("login function invoked");
     var t = this;
     return new Promise(function(o, e) {
 
@@ -73,32 +74,52 @@ App({
               }
             })
             wx.getUserInfo({
-              success: function(a) {
-                console.log(a), t.globalData.userInfo = a.userInfo;
-                encodeURIComponent(a.encryptedData), a.iv;
+              success: function(useinfoRes) {
+                console.log(useinfoRes), t.globalData.userInfo = useinfoRes.userInfo;
+                console.log("@@@@@@@", encodeURIComponent(useinfoRes.encryptedData)), useinfoRes.iv;
+                var n = t.globalData.fa_userid,
+                  s = t.globalData.fa_orderid;
+                var avtarUrl = t.globalData.userInfo ? t.globalData.userInfo.avatarUrl : "";
+                var nickName = t.globalData.userInfo ? t.globalData.userInfo.nickName : "老朋友";
+                var encryptedData = useinfoRes ? encodeURIComponent(useinfoRes.encryptedData) : "";
+                var iv = useinfoRes ? useinfoRes.iv : "";
+                a.user.getUserId(l, n, s, avtarUrl, nickName, encryptedData, iv, function (res, e) {
+                  if ("success" == res) {
+                    var l = e.data.user_id,
+                      n = e.data.mobile,
+                      s = e.data.sns;
+
+                    t.globalData.userId = l, t.globalData.mobile = n, t.globalData.userSns = s,
+                      console.log("&&&&&&&&&&", l, n, s, avtarUrl, nickName)
+                    // t.uploadavatar(t.globalData.userInfo.avatarUrl, t.globalData.userInfo.nickName, l),
+                    // t.uploadavatar("aa", "aa", "aa")
+                    t.globalData.userId = l;
+
+                  } else "complete" == res && console.log(e);
+                  o();
+                });
               },
-              fail: function(a) {
-                console.log("##############################", a);
+              fail: function(e) {
+                console.log("##############################", e);
+                a.user.getUserId(l, "", "", "", "", "", "", function (res, e) {
+                  if ("success" == res) {
+                    var l = e.data.user_id,
+                      n = e.data.mobile,
+                      s = e.data.sns;
+
+                    t.globalData.userId = l, t.globalData.mobile = n, t.globalData.userSns = s,
+                      console.log("&&&&&&&&&&", l)
+                    // t.uploadavatar(t.globalData.userInfo.avatarUrl, t.globalData.userInfo.nickName, l),
+                    // t.uploadavatar("aa", "aa", "aa")
+                    t.globalData.userId = l;
+
+                  } else "complete" == res && console.log(e);
+                  o();
+                });
+                o();
               }
             });
-            var n = t.globalData.fa_userid,
-              s = t.globalData.fa_orderid;
-            var avtarUrl = t.globalData.userInfo ? t.globalData.userInfo.avatarUrl : "";
-            a.user.getUserId(l, n, s, avtarUrl ,function(a, e) {
-              if ("success" == a) {
-                var l = e.data.user_id,
-                  n = e.data.mobile,
-                  s = e.data.sns;
-                
-                t.globalData.userId = l, t.globalData.mobile = n, t.globalData.userSns = s, 
-                  console.log("&&&&&&&&&&", l, n, s, avtarUrl)
-                // t.uploadavatar(t.globalData.userInfo.avatarUrl, t.globalData.userInfo.nickName, l),
-                  // t.uploadavatar("aa", "aa", "aa")
-                  t.globalData.userId = l;
-
-              } else "complete" == a && console.log( e);
-              o();
-            });
+            
           } else console.log("获取用户登录态失败！" + e.errMsg);
         }
       });

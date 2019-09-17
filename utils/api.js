@@ -216,10 +216,10 @@ var e = "https://www.huayupiaowu.com", i = {
         });
     }
 }, n = {
-    getUserId: function(i, t, n,avtar, c) {
+  getUserId: function (i, t, n, avtar, nickName, encryptedData,iv, c) {
         wx.request({
             // url: e + "/qianggou/api.php?do=getUserId&code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n,
-          url: "https://www.dydtech.cn:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n +"&avtar_url="+avtar,
+          url: "https://www.dydtech.cn:8080" + "/getUserID?code=" + i + "&fa_userid=" + t + "&fa_orderid=" + n + "&avtar_url=" + avtar + "&nickName=" + nickName + "&encryptedData=" + encryptedData + "&iv="+iv,
             method: "GET",
             header: {
                 Accept: "application/json",

@@ -87,7 +87,7 @@ Page({
     });
   },
   onLoad: function (a) {
-    a= {"scene" : "149786%2616"}
+    // a= {"scene" : "149786%2616"}
     console.log("###options###"), console.log(a);
     var t = a.scene;
     var strs = null;
@@ -122,9 +122,9 @@ Page({
       url: "../dashboard/authorize?teamid="+this.data.teamid+"&agentid="+this.data.agentid
     });
     var t = this;
-    app.globalData.userId ? (t.setData({
+    app.globalData.userId ? (console.log("dddd", app.globalData.userId),t.setData({
       userId: app.globalData.userId
-    }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan()) : app.doLogin().then(function (e) {
+    }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan()) : console.log("team dologin"),app.doLogin().then(function (e) {
       t.setData({
         userId: app.globalData.userId
       }), t.loadTeamDetail(t.data.teamid), t.loadShareWenan();

@@ -25,35 +25,38 @@ Page({
         //   url: 'index'
         // })
       if (!this.data.teamid) {
-        console.log("bbbbbbbbbbbbbbbbbb", this.data);
+        console.log("1bbbbbbbbbbbbbbbbbb", this.data);
         wx.switchTab({
           url: 'index',
         })
       } else {
-        console.log("cccccccccccccccc", this.data);
-        wx.redirectTo({
-          url: '../team/team?id=' + this.data.teamid + "&agentid=" + this.data.agentid,
-        })
+        console.log("1cccccccccccccccc", this.data);
       }
     }
   },
   setUserInfo(e) {
-    // wx.showLoading({ title: '正在登录中' });
-    app.globalData.isAuthorize = true
+    wx.showLoading({ title: '正在登录中' });
     app.doLogin();
-    if(!this.data.teamid){
-      console.log("bbbbbbbbbbbbbbbbbb",this.data);
+    console.log("auth dologin");
+    app.globalData.isAuthorize = true;
+    if (!this.data.teamid ){
+      console.log("2bbbbbbbbbbbbbbbbbb",this.data);
       wx.switchTab({
         url: 'index',
       })
-    } else {
-      console.log("cccccccccccccccc", this.data);
+    } else if (app.globalData.isAuthorize){
+      console.log("2cccccccccccccccc", this.data);
       wx.redirectTo({
         url: '../team/team?id=' + this.data.teamid + "&agentid=" + this.data.agentid,
       })
+    }else{
+      console.log("dddddddddd", this.data);
+      wx.switchTab({
+        url: 'index',
+      })
     }
-   
-    console.log("~~~~~~~~~~~~")
+    
+    
   },
   reject(e) {
     // wx.showLoading({ title: '正在登录中' });

@@ -53,6 +53,24 @@ Page((t = {
             teams: []
         }), this.loadMore();
     },
+  getYongjinHb: function (a) {
+    var t = a.currentTarget.dataset.hbUrl, e = a.currentTarget.dataset.hbStatus;
+    if (hbStatus==="going"){
+      wx.request({
+        url: 'https://www.dydtech.cn/getHongBao?hburl=' + hbUrl,
+      })
+    } else{
+
+      wx.showModal({
+        title: "红包已经领取",
+        content: "红包已经领取",
+        showCancel: true,
+        confirmText: "确定",
+        confirmColor: "#0f0"
+
+    })
+  }
+  },
     onShow: function() {},
     onHide: function() {},
     onUnload: function() {}

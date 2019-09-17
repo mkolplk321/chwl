@@ -6,17 +6,15 @@
         <text>没有可用优惠券/(ㄒoㄒ)/~~</text>
     </view>
     <view class="order" wx:for="{{teams}}" wx:for-item="coupon">
-        <view class="left">
-            <image class="image" src="/images/123.jpg"></image>
-        </view>
+        
         <view class="center">
             <text class="money centertext">推广收入：{{coupon.money}}元</text>
             <text class="money centertext">推广产品 : {{coupon.product}}</text>
             <text class="money centertext">下单人：{{coupon.userid}}</text>
             <text class="money centertext">下单时间：{{coupon.timestamp}}</text>
         </view>
-        <view class="right">
-            <text>{{coupon.status}}</text>
+       <view class="right">
+            <image class="image" src="/images/tuiguang_hb.gif" bindtap="getYongjinHb" data-hb-url="{{coupon.hburl}}" data-hb-status="{{coupon.hbstatus}}"></image>
         </view>
     </view>
 </scroll-view>
