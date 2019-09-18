@@ -1,3 +1,4 @@
+
 <scroll-view bindscrolltolower="loadMore" class="list" lowerThreshold="800" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
     <view class="search_no" wx:if="{{!teams.length}}">
         <view class="font_14">
@@ -5,6 +6,7 @@
         </view>
         <text>没有可用优惠券/(ㄒoㄒ)/~~</text>
     </view>
+    
     <view class="order" wx:for="{{teams}}" wx:for-item="coupon">
         
         <view class="center">
@@ -15,9 +17,11 @@
         </view>
        <view class="right">
             <image class="image" src="/images/tuiguang_hb.gif" bindtap="getYongjinHb" data-hb-url="{{coupon.hburl}}" data-hb-status="{{coupon.hbstatus}}"></image>
+            
         </view>
     </view>
 </scroll-view>
+
 <view>
     <loading hidden="{{hidden}}">
         加载中...

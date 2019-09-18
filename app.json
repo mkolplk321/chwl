@@ -31,7 +31,8 @@
     "pages/dashboard/category",
     "pages/dashboard/list",
     "pages/dashboard/search",
-    "pages/dashboard/note"
+    "pages/dashboard/note",
+    "pages/user/yaoyaola"
   ],
   "window": {
     "backgroundTextStyle": "light",

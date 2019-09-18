@@ -54,10 +54,28 @@ Page((t = {
         }), this.loadMore();
     },
   getYongjinHb: function (a) {
+    console.log("aaaaaaaa",a);
     var t = a.currentTarget.dataset.hbUrl, e = a.currentTarget.dataset.hbStatus;
-    if (hbStatus==="going"){
-      wx.request({
-        url: 'https://www.dydtech.cn/getHongBao?hburl=' + hbUrl,
+    if (e==="going"){  
+      console.log("hburl",t);
+      // wx.request({
+      //   url: t,
+      //   success: function (o) {
+      //     console.log(o);
+      //     wx.request({
+      //       url: 'https://www.dydtech.cn/getHongBao?hburl=' + t,
+      //     })
+      //   }
+      // })
+      wx.navigateTo({
+        url: '../user/yaoyaola?hburl=' +encodeURIComponent(t), //
+        success: function () {
+          wx.request({
+            url: 'https://www.dydtech.cn/getHongBao?hburl=' + t,
+          })
+        },       //成功后的回调；
+        fail: function () { },         //失败后的回调；
+        complete: function () { }      //结束后的回调(成功，失败都会执行)
       })
     } else{
 
