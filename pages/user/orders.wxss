@@ -1,4 +1,32 @@
+.order {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 230rpx;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    font-size: 12px;
+}
 
+.left {
+    width: 25%;
+    padding: 20rpx 20rpx;
+    line-height: 180rpx;
+}
+
+.right {
+    width: 25%;
+    line-height: 180rpx;
+    padding: 20rpx 50rpx;
+    float: right;
+}
+
+.center {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rpx;
+}
 
 .swiper-tab {
     width: 100%;
@@ -55,7 +83,7 @@
     overflow: hidden;
     border-radius: 5px;
     margin-right: 4%;
-    float: left;
+    float: right;
 }
 
 .sp_text {

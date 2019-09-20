@@ -95,29 +95,31 @@ Page({
     var that = this;
     console.log("t:", t)
     t && (t = decodeURIComponent(t),console.log("ttt",t), strs = t.split('&'),a.id = strs[0],pkid=strs[1],console.log("++++++++++++",a.id,pkid));
-    if(pkid){
-      this.setData({
-        hongbao_flag: true
-      })
-      wx.request({
-        url: 'https://www.dydtech.cn:8080/getUserIDByOrder?pkid='+pkid,
-        success: function (o) {
-          a.agentid = o.data.userId;
-          var i = a.agentid;
-          i && that.setData({
-            agentid: i
-          }), 
-          console.log("agentid",o);
-        }
-      })
-    }
-   
-   var e = a.id;this.setData({
+    var e = a.id; this.setData({
       teamid: e
     });
+    if(pkid){
+      this.setData({
+        hongbao_flag: true,
+        agentid : pkid
+      })
+      // wx.request({
+      //   url: 'https://www.dydtech.cn:8080/getUserIDByOrder?pkid='+pkid,
+      //   success: function (o) {
+      //     a.agentid = o.data.userId;
+      //     var i = a.agentid;
+      //     i && that.setData({
+      //       agentid: i
+      //     }), 
+      //     console.log("agentid",o);
+      //   }
+      // })
+    }
+   
+   
   },
   onReady: function () {
-    
+      console.log("teampage_data:",this.data)
         if (!app.globalData.isAuthorize) return void wx.redirectTo({
       url: "../dashboard/authorize?teamid="+this.data.teamid+"&agentid="+this.data.agentid
     });

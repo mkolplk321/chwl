@@ -9,7 +9,7 @@
         <image bindtap="orderdetail" class="sh_slt" data-id="{{item.id}}" src="{{item.image}}" wx:if="{{item.from!='xiaochengxupt'}}"></image>
         <image bindtap="orderdetail" class="sh_slt" data-id="{{item.id}}" src="{{item.image}}" wx:if="{{item.from=='xiaochengxupt'&&item.tuan_status==2}}"></image>
         <image bindtap="showtixing" class="sh_slt" src="{{item.image}}" wx:if="{{item.from=='xiaochengxupt'&&item.tuan_status!=2}}"></image>
-        <view class="df_1">
+        <view class="center">
             <view class="sp_text">
                 <block wx:if="{{item.from!='xiaochengxupt'}}">
                     <view bindtap="orderdetail" class="sp_tit ovh1" data-id="{{item.id}}">{{item.title}}</view>
