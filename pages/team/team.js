@@ -15,6 +15,7 @@ Page({
     minute_show: 0,
     second_show: 0,
     hidden: !1,
+    intervalFlag : !1,
     wenan: {},
     hongbao_flag :false,
     haibao: {
@@ -57,7 +58,11 @@ Page({
             hidden: !0
           });
         // "end" == i.state || "awllout" == i.state) return;
-        var s = e.data.timediff, o = setInterval(function () {
+        if(!e.data.intervalFlag){
+          e.setData({
+            intervalFlag:1
+          })
+        console.log("setinterval1");var s = e.data.timediff, o = setInterval(function () {
           var a = 0, t = 0, i = 0, n = 0;
           s > 0 ? (a = Math.floor(s / 86400), t = Math.floor(s / 3600) - 24 * a, i = Math.floor(s / 60) - 24 * a * 60 - 60 * t,
             n = Math.floor(s) - 24 * a * 60 * 60 - 60 * t * 60 - 60 * i) : clearInterval(o),
@@ -66,13 +71,20 @@ Page({
               hour_show: t,
               minute_show: i,
               second_show: n
-            }), s--;
-        }, 1e3);
+            }), s-- ;
+        }, 1000);
+        }
       }
     });
   },
   gotoBuy: function (a) {
     var t = a.currentTarget.dataset.teamId, e = a.currentTarget.dataset.teamName, i = a.currentTarget.dataset.startTime, n = a.currentTarget.dataset.endTime, s = a.currentTarget.dataset.referPrice, o = a.currentTarget.dataset.permaxNumber;
+    console.log("this agentid:", this.data.agentid)
+    if (this.data.agentid==null && wx.getStorageSync(t+"_share") != null){
+      console.log("this agentid:", this.data.agentid)
+      this.data.agentid = wx.getStorageSync(t + "_share");
+      this.data.hongbao_flag = true;
+    }
     wx.navigateTo({
       url: "/pages/buy/buy?team_id=" + t + "&team_name=" + e + "&agentid=" + this.data.agentid + "&start_time=" + i + "&end_time=" + n + "&referprice=" + s + "&permax_number=" + o +"&hongbao_flag="+this.data.hongbao_flag
     });
@@ -87,7 +99,7 @@ Page({
     });
   },
   onLoad: function (a) {
-    // a= {"scene" : "149786%2616"}
+    
     console.log("###options###"), console.log(a);
     var t = a.scene;
     var strs = null;
@@ -103,6 +115,7 @@ Page({
         hongbao_flag: true,
         agentid : pkid
       })
+      wx.setStorageSync(e+"_share", this.data.agentid);
       // wx.request({
       //   url: 'https://www.dydtech.cn:8080/getUserIDByOrder?pkid='+pkid,
       //   success: function (o) {
