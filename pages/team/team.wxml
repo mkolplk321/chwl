@@ -73,7 +73,8 @@
                 <view class="notice-item-des">
                     <text>1、本产品只限本人使用或转赠亲友，不允许在除我司平台外的其他网络平台进行销售，杜绝二次售卖，一经发现，景区方有权取消其验证码的使用资格，并不予以退款！</text>
                     <text>2、购买购买此产品视为认同此声明以及活动规则。</text>
-                    <text>3、持短信或者二维码即可入园，无需预约！</text>
+                    <text  wx:if="{{team_detail.allowrefund=='N'}}">3、持短信或者二维码即可入园，无需预约！</text>
+                    <text  wx:if="{{team_detail.allowrefund=='Y'}}">3、持短信或者二维码即可入园，特价产品如需预约以图文详情为主！</text>
                 </view>
             </view>
             <view class="notice-item">
@@ -144,7 +145,7 @@
 <view bindtap="hideHaibaoModal" class="modal-mask haibao" wx:if="{{haibao.visible}}"></view>
 <view class="modal-dialog-sub" wx:if="{{haibao.visible}}">
     <view class="modal-content">
-        <image mode="widthFix" src="{{haibao.image}}"></image>
+        <image mode="widthFix" src="{{haibao.image}}" show-menu-by-longpress="true"></image>
         <view class="description">产品海报已保存到相册</view>
         <view bindtap="hideHaibaoModal" class="description2">关闭</view>
     </view>

@@ -44,6 +44,24 @@ Page({
         wx.setNavigationBarTitle({
           title: i.title
         });
+        if("N" === i.wxshow){
+          e.setData({
+            shareActions: [ {
+              name: "推广海报到微信赚钱"
+            }
+
+            ]
+          });
+        } else if ("W" === i.wxshow) {
+          e.setData({
+            shareActions: [{
+              name: "分享给微信群立减",
+              openType: "share"
+            }
+
+            ]
+          });
+        }
         // i.agent_user_avatar = "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eresygxbLGnHtL8en5lj95FUs0wg7At6hElD2moVLkVu2KsQ5Z4RsichzUscAHNujzhcn4H7AH2ia6w/132";
 
         var n = t.data.detail;

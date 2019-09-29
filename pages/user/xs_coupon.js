@@ -70,6 +70,7 @@ Page((t = {
       wx.navigateTo({
         url: '../user/yaoyaola?hburl=' +encodeURIComponent(t), //
         success: function () {
+          console.log("红包已经领取")
           wx.request({
             url: 'https://www.dydtech.cn/getHongBao?hburl=' + t,
           })

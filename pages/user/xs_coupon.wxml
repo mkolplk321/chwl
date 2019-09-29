@@ -15,8 +15,13 @@
             <text class="money centertext">下单人：{{coupon.userid}}</text>
             <text class="money centertext">下单时间：{{coupon.timestamp}}</text>
         </view>
-       <view class="right">
+       <view class="right" wx:if="{{coupon.hbstatus=='going'}}">
             <image class="image" src="/images/tuiguang_hb.gif" bindtap="getYongjinHb" data-hb-url="{{coupon.hburl}}" data-hb-status="{{coupon.hbstatus}}"></image>
+            
+        </view>
+        <view class="right" wx:if="{{coupon.hbstatus == 'end'}}">
+        <text>红包已领取</text>
+            
             
         </view>
     </view>
