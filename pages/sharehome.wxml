@@ -1,0 +1,5 @@
+<view class="container">
+  <view class="pageH5">
+    <web-view src="https://www.dydtech.cn:8080/fenxiao.html"></web-view>
+  </view>
+</view>

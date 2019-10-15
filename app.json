@@ -32,7 +32,8 @@
     "pages/dashboard/list",
     "pages/dashboard/search",
     "pages/dashboard/note",
-    "pages/user/yaoyaola"
+    "pages/user/yaoyaola",
+    "pages/sharehome"
   ],
   "window": {
     "backgroundTextStyle": "light",

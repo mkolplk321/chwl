@@ -24,8 +24,7 @@ Page({
     },
     shareActionVisible: !1,
     shareActions: [{
-      name: "分享给微信群立减",
-      openType: "share"
+      name: "游乐星计划",
     }, {
       name: "推广海报到微信赚钱"
     }
@@ -44,24 +43,23 @@ Page({
         wx.setNavigationBarTitle({
           title: i.title
         });
-        if("N" === i.wxshow){
-          e.setData({
-            shareActions: [ {
-              name: "推广海报到微信赚钱"
-            }
+        // if("N" === i.wxshow){
+        //   e.setData({
+        //     shareActions: [ {
+        //       name: "游乐星计划"
+        //     }
 
-            ]
-          });
-        } else if ("W" === i.wxshow) {
-          e.setData({
-            shareActions: [{
-              name: "分享给微信群立减",
-              openType: "share"
-            }
+        //     ]
+        //   });
+        // } else if ("W" === i.wxshow) {
+        //   e.setData({
+        //     shareActions: [{
+        //       name: "分享给微信群立减"
+        //     }
 
-            ]
-          });
-        }
+        //     ]
+        //   });
+        // }
         // i.agent_user_avatar = "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eresygxbLGnHtL8en5lj95FUs0wg7At6hElD2moVLkVu2KsQ5Z4RsichzUscAHNujzhcn4H7AH2ia6w/132";
 
         var n = t.data.detail;
@@ -262,7 +260,11 @@ Page({
     var e = this;
     console.log(a.detail.index), this.setData({
       shareActionVisible: !0
-    }), 1 == a.detail.index && (wx.showLoading({
+    });
+      0 == a.detail.index  && (wx.navigateTo({
+      url: '../sharehome',
+    }));
+    1 == a.detail.index && (wx.showLoading({
       title: "下载海报中"
     }), t.ticket.haibao(this.data.teamid, this.data.userId, function (a, t) {
       wx.hideLoading(), "success" == a && (console.log(t.data), wx.showLoading({

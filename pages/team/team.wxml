@@ -6,8 +6,8 @@
     <view class="title_content">
         <text class="title">{{team_detail.title}}</text>
         <view class="title_share">
-            <image src="/images/share.png" style="width:40rpx;height:40rpx;margin-left:5rpx;" bindtap="showShareSheet"></image>
-            <view  bindtap="showShareSheet" class="share-text">推广</view>
+            <image src="/images/tuiguang.png" style="width:70rpx;height:70rpx;margin-left:5rpx;" bindtap="showShareSheet"></image>
+            <!-- <view  bindtap="showShareSheet" class="share-text">推广</view> -->
             
         </view>
     </view>
@@ -32,7 +32,7 @@
         <icon size="16" type="success"></icon>
         <text class="agree_title" style="color:#6bbd00">平台独家产品</text>
     </view>
-    <view class="item recommend" wx:if="{{team_detail.recommendteams}}">
+    <view class="item recommend" wx:if="{{team_detail.recommendteams.length!=0}}">
         <view class="header">推荐产品</view>
         <navigator class="team" url="../team/team?id={{item.id}}" wx:for="{{team_detail.recommendteams}}">
             <image src="{{item.image}}"></image>
