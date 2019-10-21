@@ -33,7 +33,13 @@
     "pages/dashboard/search",
     "pages/dashboard/note",
     "pages/user/yaoyaola",
-    "pages/sharehome"
+    "pages/sharehome",
+    "pages/user_spread_user/index",
+    "pages/user_spread_code/index",
+    "pages/user_spread_money/index",
+    "pages/promoter-order/index",
+    "pages/item_tuiguang",
+    "pages/huiyuan_login"
   ],
   "window": {
     "backgroundTextStyle": "light",

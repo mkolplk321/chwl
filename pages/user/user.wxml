@@ -13,8 +13,8 @@
             </view>
            
             <view class="li nav_item nav_gold" ptag="12478.10.1">
-                <view bindtap="xscoupon" class="div nav_item_hd">
-                    <navigator class="a" hoverClass="none">我的钱包 </navigator>
+                <view bindtap="myshare" class="div nav_item_hd">
+                    <navigator class="a" hoverClass="none">我的推广 </navigator>
                 </view>
             </view>
             <view class="li nav_item nav_cart" ptag="12478.10.1">

@@ -73,9 +73,9 @@ Page({
             url: "/pages/user/orders"
         });
     },
-    xscoupon: function() {
+  myshare: function() {
         wx.navigateTo({
-            url: "/pages/user/xs_coupon"
+            url: "/pages/user_spread_user/index"
         });
     },
     mymember: function() {

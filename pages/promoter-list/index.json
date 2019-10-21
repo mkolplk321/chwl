@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "团队成员"
+}
