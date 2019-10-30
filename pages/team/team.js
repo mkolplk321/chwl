@@ -65,7 +65,7 @@ Page({
         var n = t.data.detail;
         // if (n = n && "" != n ? (n = n.replace(new RegExp('"/static/kindeditor', "gm"), '"http://www.huayupiaowu.com/static/kindeditor')).replace(/\<img/gi, '<img class="rich-img"') : "", 
         // i.detail = n, 
-        n && "" != n ? (n = n.replace(new RegExp('"/attached/image', "gm"), '"https://www.dydtech.cn:8080/attached/image'),
+        n && "" != n ? (n = n.replace(new RegExp('"/attached/image', "gm"), '"https://localhost:8080/attached/image'),
           n = weixin.wxParse("detail", "html", n, e, 5), e.setData({})) : n = "",
           e.setData({
             team_detail: i,
@@ -133,7 +133,7 @@ Page({
       })
       wx.setStorageSync(e+"_share", this.data.agentid);
       // wx.request({
-      //   url: 'https://www.dydtech.cn:8080/getUserIDByOrder?pkid='+pkid,
+      //   url: 'https://localhost:8080/getUserIDByOrder?pkid='+pkid,
       //   success: function (o) {
       //     a.agentid = o.data.userId;
       //     var i = a.agentid;

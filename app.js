@@ -12,6 +12,7 @@ App({
     fa_userid: null,
     fa_orderid: null,
     isAuthorize: false,
+    tuiguang_flag:true,
     city: {
       id: "0",
       name: "全国"
@@ -87,10 +88,13 @@ App({
                   if ("success" == res) {
                     var l = e.data.user_id,
                       n = e.data.mobile,
-                      s = e.data.sns;
+                      s = e.data.sns,
+                      flag = e.data.tuiguang_flag == null ? false : e.data.tuiguang_flag ;
+
 
                     t.globalData.userId = l, t.globalData.mobile = n, t.globalData.userSns = s,
-                      console.log("&&&&&&&&&&", l, n, s, avtarUrl, nickName)
+                    t.globalData.tuiguang_flag = flag,
+                      console.log("&&&&&&&&&&", l, n, s, avtarUrl, nickName, flag)
                     // t.uploadavatar(t.globalData.userInfo.avatarUrl, t.globalData.userInfo.nickName, l),
                     // t.uploadavatar("aa", "aa", "aa")
                     t.globalData.userId = l;
@@ -142,7 +146,7 @@ App({
       a.globalData.cityData ? t(a.globalData.cityData) : wx.request({
         // url: "https://www.huayupiaowu.com/qianggou/api.php?do=citys",
         // url: "https://122.152.209.5:8080/districts",
-        url: "https://www.dydtech.cn:8080/districts",
+        url: "https://localhost:8080/districts",
         success: function(o) {
           a.globalData.cityData = o.data, wx.setStorage({
             key: "city-list-data",

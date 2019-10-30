@@ -1,17 +1,19 @@
 // components/home/index.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    homeActive: false
+    homeActive: false,
+    shareflag: app.globalData.tuiguang_flag
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
   setTouchMove: function (e) {
     var that = this;
@@ -23,14 +25,14 @@ Page({
   },
   open: function () {
     this.setData({
-      homeActive: !this.data.homeActive
+      homeActive: !this.data.homeActive,
+      shareflag: app.globalData.tuiguang_flag
     })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

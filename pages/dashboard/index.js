@@ -54,7 +54,7 @@ Page({
         var t = this, a = t.data.page, e = t.data.size, i = this.data.city.id;
         wx.request({
           // url: "https://122.152.209.5:8080/qianggou/teams?cityid=" + i + "&page=" + a + "&size=" + e,
-          url: "https://www.dydtech.cn:8080/qianggou/teams?cityid=" + i + "&page=" + a + "&size=" + e,
+          url: "https://localhost:8080/qianggou/teams?cityid=" + i + "&page=" + a + "&size=" + e,
             success: function(e) {
                 if (wx.stopPullDownRefresh(), 1 == a) {
                     t.data.hotList.length = 0, t.data.teamList.length = 0;

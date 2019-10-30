@@ -63,7 +63,7 @@ Page((t = {
       //   success: function (o) {
       //     console.log(o);
       //     wx.request({
-      //       url: 'https://www.dydtech.cn/getHongBao?hburl=' + t,
+      //       url: 'https://localhost/getHongBao?hburl=' + t,
       //     })
       //   }
       // })
@@ -72,7 +72,7 @@ Page((t = {
         success: function () {
           console.log("红包已经领取")
           wx.request({
-            url: 'https://www.dydtech.cn/getHongBao?hburl=' + t,
+            url: 'https://localhost/getHongBao?hburl=' + t,
           })
         },       //成功后的回调；
         fail: function () { },         //失败后的回调；

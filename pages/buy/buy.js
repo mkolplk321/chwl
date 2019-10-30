@@ -54,7 +54,7 @@ Page({
                     success: function(e) {
                         console.log("###success"), console.log(e),
                         wx.request({
-                          url: 'https://www.dydtech.cn:8080/charge?orderid=' + a.data.orderid,
+                          url: 'https://localhost:8080/charge?orderid=' + a.data.orderid,
                         })
                          wx.redirectTo({
                             url: "../buy/success?orderid=" + a.data.orderid + "&team_id=" + i
